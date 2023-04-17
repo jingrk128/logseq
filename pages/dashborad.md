@@ -1,2 +1,3 @@
 - {{query (todo later)}}
--
+- {{query (todo now)}}
+- {{query (todo done)}}
