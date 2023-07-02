@@ -1,0 +1,2 @@
+- 取得是否為slc
+- 把lun、block、plane、page資訊整合成一個dw - #NfcCfg_Convert2RowAddr()

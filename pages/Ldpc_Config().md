@@ -1,0 +1,32 @@
+- 關掉auto-gating clock - #DEC_AUTO_GATING_DISABLE()
+- 選擇ldpc decode channle - #LdpcDrv_EnableDec()
+- gEnableLdpcEcc[]儲存是否要ecc
+- gEnableLdpcCrc[]儲存是否要crc
+- 計算cwSize
+	- 計算cwUserSize
+		- cwUserSize = (NAND_LDPC_CW_SEC_CNT * SECTOR_SIZE) + meta size
+		- cwUserSize = (4                                             * 512                 ) + 4
+		- cwUserSize = 2052
+	- cwSize = cwUserSize
+	- 如果要crc，cwSize += 4
+	- 如果要ecc，cwSize+=NFC_CONFIG_GET_LDPC_PARITY_SIZE()
+		- NFC_CONFIG_GET_LDPC_PARITY_SIZE = 236
+- 如果要用crc，就把ldpc_dec_error_mask的bit14(dec_crc_failure_msk)設0；否則設1
+- 設定ldpc_dec_ctrl
+	- 如果不要ecc，就把bit設1
+	- 如果要ecc
+		- 把bit1設0
+		- bit3設1
+		- 如果要crc，就把bit2設1
+- 把cwUserSize設定到ldpc_dec_size_config的user_size
+- 以下依序把ldpc decode負責的兩個ch都做一次
+	- 選擇ch - #NfcDrv_EnableCh()
+	- 如果要ecc，就把ENC_CTRL的enc_bypass設0；否則設1
+	- 設定ch內的chunk0-7的size - #NFCDRV_SET_CHUNk_SADDR()
+		- 依據以下來設定
+			- cwSize
+			- 各個chunk的Padding_dummy_len暫存器
+		- 最後chunk1 3 5 7是2316byte、chunk0 2 4 6是2292byte
+- 把ldpc_dec_error清為0 - #LDPCDRV_SET_DEC_ERROR()
+- 打開ldpc error interrupt - #LDPCDRV_SET_INTR()
+- 打開auto-gating clock - #DEC_AUTO_GATING_ENABLE()

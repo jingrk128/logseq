@@ -1,0 +1,38 @@
+- ### 1.把新的DiffZeroOne值插入進best01Diff[]
+- ### 2.把retrySeq值插入進bestRrtIndex[]
+- ### 如果真的有執行到插入的動作，會讓soft retry的次數加1次
+	- ### soft retry次數上限的值是LDPC_MAX_SD_VTH_SHIFT
+- #2311 #trunk #svn25943 #DL_Flashdisk_ASIC_YMTC_X1_9050_CLIENT
+- 參數：diffCount(就是新的DiffZeroOne值)
+- 分四個步驟
+- ### step1.設定初始值
+- replacedIndex
+	- 是執行插入動作時的最後一個元素的index
+	- 初始值設為設為(LDPC_MAX_SD_VTH_SHIFT-1)，也就是最後一個index
+	- 如果在step2時更改replacedIndex的值，表示step4向後挪動的次數變少了
+- index
+	- 最終會被填入新值的index
+	- 初始值設為LDPC_MAX_SD_VTH_SHIFT
+	- 因為最後會需要replacedIndex >= index，才做插入的動作
+		- 所以如果index的值沒被改變，replacedIndex就不可能會>=index，就不會做插入的動作
+- ps.LDPC_MAX_SD_VTH_SHIFT為12
+- ### step2.設定replacedIndex
+- 循序尋找opCmd->parent->bestRrtIndex[]
+	- 直到找出第一個值等於retrySeq的元素為止
+	- 如果找到的話，假設是在bestRrtIndex[i]找到，就看best01Diff[i]的值是否大於diffCount
+		- 是 - 設replacedIndex = i
+		- 否 - 直接結束function
+- ### step3.設定index
+- 循序尋找opCmd->parent->best01Diff[]
+	- 直到找出第一個大於diffCount的值為止
+	- 假設是在best01Diff[i]找到，就設index = i
+	- 如果沒找到，就不做step4
+- ### step4.把新的值插進best01Diff[]和bestRrtIndex[]
+- 如果replacedIndex >= index：
+	- 設i從(replacedIndex-1)開始，到index結束
+	- 把這個範圍內的bestRrtIndex[i]和best01Diff[i]都往後挪動一個元素
+	- 最後，原本的第(replacedIndex)個元素的值會消失，第(index)個元素的值是空的
+	- bestRrtIndex[index] = retrySeq
+	- best01Diff[index] = diffCount
+	-
+	-

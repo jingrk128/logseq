@@ -1,0 +1,10 @@
+- ### 在template memory填寫template table
+- 依序把templTable[]裡面的所有table都做一次
+	- 設定table的templStart
+		- templStart就是當前table和上一個table的addr相差多少dw
+		- 第一個table的templStart為0
+	- 把table的data複製到template memory
+		- template memory的addr為上一個tale複製的結尾的下一個dw
+		- 可以從table的templLen得知要複製多少個dw
+			- templLen的單位是byte，所以要除以4才是dw
+- 回傳總共複製了多少data到template memory，單位是dw

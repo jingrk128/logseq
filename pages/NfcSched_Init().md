@@ -1,0 +1,11 @@
+- ### 初始化sw queue和completion function以及read retry資源
+- 把gNfcChCmdMgr清為0
+- 把gNfcSmart清為0
+- 初始化以下double linked list
+	- 每一個gNfcChCmdMgr[].gNfcWaitQ[]
+	- gNfcRspQ
+	- gNfcWaitRspQ
+- 初始化exception相關參數 - #NfcExcp_Init()
+- 把ldma done的function設為NfcSchedHandleLdmaDone - NfcDrv_RegistLdmaDoneHandle()
+- 把nfc done的function設為NfcSchedHandleCmdNfcStatus - NfcDrv_RegistNfcStatusHandle()
+-

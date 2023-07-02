@@ -1,0 +1,24 @@
+- ### 釋放cmd所需記憶體
+- 如果cmd的位址有超過DTCM的範圍嗎？
+	- 沒有
+		- 如果gNfcCmdMgr.fastHead不是指向null
+			- 設定cmd->next指向gNfcCmdMgr.fastHead
+		- 如果gNfcCmdMgr.fastHead是指向null
+			- 設定cmd->next指向null
+		- 讓gNfcCmdMgr.fastHead指向cmd
+		- gNfcCmdMgr.freeFastCmdCnt++;
+	- 有
+		- 如果gNfcCmdMgr.slowHead不是指向null
+			- 設定cmd->next指向gNfcCmdMgr.slowHead
+		- 如果gNfcCmdMgr.slowHead是指向null
+			- 設定cmd->next指向null
+		- 讓gNfcCmdMgr.slowHead指向cmd
+		- gNfcCmdMgr.freeSlowCmdCnt++;
+- 如果gNfcCmdMgr.freeFastCmdCnt等於初始值
+	- 如果gNfcCmdMgr.reapMgr不為0
+		- 如果gNfcCmdMgr的freeSlowCmdCnt等於totalSlowCmdCnt
+			- ReapAlloc_Destroy(gNfcCmdMgr.reapMgr);
+			- gNfcCmdMgr.reapMgr = NULL;
+			- gNfcCmdMgr.slowHead = NULL;
+			- gNfcCmdMgr.totalSlowCmdCnt = gNfcCmdMgr.freeSlowCmdCnt = 0;
+			-

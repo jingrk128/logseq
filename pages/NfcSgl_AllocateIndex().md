@@ -1,0 +1,4 @@
+- 記錄sglIndexQueue.next，存進dataPtr
+- 讓sglIndexQueue.next指向sglIndexQueue.next->next
+- nrFreeSglIndex--
+- 回傳dataPtr

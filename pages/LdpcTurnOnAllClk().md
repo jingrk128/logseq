@@ -1,0 +1,5 @@
+- ### enable ldpc clock
+- #2311 #trunk #svn25943 #DL_Flashdisk_ASIC_YMTC_X1_9050_CLIENT
+- 把0x5400_C010的bit14和bit15都設1
+- bit14: LDPC decoder0 clock
+- bit15: LDPC decoder1 clock

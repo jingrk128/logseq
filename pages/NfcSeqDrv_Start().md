@@ -1,0 +1,6 @@
+- 準備cmd header所指向的地方
+	- pSeqAider->isPriority = isPriority;
+	- pSeqAider->pHdr = &gSeqMem[0];
+	- pSeqAider->pDwPtr = pSeqAider->pHdr;
+	- pSeqAider->pDwPtr++;
+	- 填寫pSeqAider->header

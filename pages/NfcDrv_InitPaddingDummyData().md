@@ -1,0 +1,29 @@
+- ### 設定Padding
+- 最終：
+	- chunk 1 3 5 7有padding，0 2 4 6沒有padding
+	- 一個padding是24byte
+- 有一個參數：enable
+- ---
+- 算出一個page有幾個chunk，存進totalChunk
+- 算出一個page加上spare是多少byte，存進fullPage
+- 算出一個chunk是多少byte，存進chunkSize
+	- user + meta + crc + parity
+	- 2048 + 4 + 4 + NFC_CONFIG_GET_LDPC_PARITY_SIZE()
+- 把所有的padding_len設0 - NFCDRV_CLR_CHUNK_PADDING_LEN()
+- 關掉padding - NFCDRV_PADDING_DISABLE()
+- 如果enable是true 且 fullPage > (totalChunk * chunkSize)
+	- 算出一個page的padding總共多少byte並存進padSize
+		- padSize = (fullPage - (totalChunk * chunkSize))
+	- 如果是custom codec
+		- 依序做chunk1、3、5、7
+			- 設定padding長度為padSize/4 - NFCDRV_SET_CHUNK_PADDING_LEN()
+			- enable padding - NFCDRV_CHUNK_PADDING_ENABLE()
+	- 如果不是custom codec
+		- 設定中間chunk的padding len為0
+			- 一開始已經把所有的padding設0了，這一步可以不做吧？ #問題集
+			- 如果padSize>4092，就把padSize設為4092
+			- 把最後一個chunk的padding len設為padSize
+			- enable最後一個chunk的padding
+	- 設定padding的內容為0xaabbccdd - NFCDRV_SET_PADDING_DUMMY_DATA()
+	- 設定padding的scramble sdd為0xab11cc9b - NFCDRV_SET_PADDING_DUMMY_SCR_SEED()
+	- 打開padding的scramble - NFCDRV_EN_PADDING_SCR()

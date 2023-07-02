@@ -1,0 +1,33 @@
+- ## 初始化meta
+- ### step1.設定meta相關的全域變數
+- 設定gNrMetaNvml有幾個cw
+	- gNrMetaNvml = planePerLunNum*pageUserSectorCnt/4
+	- /4是因為1個cw有4個sector
+- 設定gNrMetaPage有幾個cw
+	- gNrMetaPage = pageUserSectorCnt/4
+- gNrSmallMeta = gNrMetaPage;
+- gNrBigMeta = gNrMetaNvml;
+- gNrReservedBigMeta設1
+	- gNrReservedBigMeta的用途是什麼 #問題集
+- ### step2.準備建立meta queue的相關變數
+- 從icf檔取得meta base addr，並存進gMetaBaseVal - __section_begin("META")
+- 把meta base addr對ocb的offset填到meta_mem_base_addr - NFCDRV_SET_META_BASE_ADDR()
+	- 每個channel都要做
+- 讓nrMetaBuffSize從icf檔取得meta總共大小 - __section_size("META")
+- 算出nrMetaBuffSize的31/32有幾個dw，存進memSizeForBig
+- ### step3.建立big meta queue
+- 從gMetaBaseVal開始，到gMetaBaseVal+memSizeForBig結束，把這一塊空間劃分成好幾等分
+- 一等份的大小為一個gNrMetaNvml
+- 若有剩餘不足一個gNrMetaNvml的空間就忽略它
+- 每一等分之間形成single linked list
+	- 每一等分都指向前一等分
+	- 第一等分指向gBigMetaQueue
+	- gBigMetaQueue指向最後一等分
+- gNrFreeBigMeta記錄總共有幾等份
+- ### step4.建立small meta queue
+- 把剩下的meta size，依照建立big meta queue的方式，來建立small meta queue
+	- 一等分的大小為gNrMetaPage
+	- 連接第一等分和最後一等分的是gSmallMetaQueue
+	- gNrFreeSmallMeta記錄共有幾等分
+- ### step5.設定dummy meta
+- 從gBigMetaQueue取出一個meta，存進gDummyMetaIdx

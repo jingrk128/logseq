@@ -1,0 +1,23 @@
+- ### 取得read retry table中調整vth的位址
+- 算出retrySeq的值
+	- 在hard retry是opCmd->option.retrySeq
+	- 在soft retry是opCmd->parent->bestRrtIndex[opCmd->option.retrySeq]
+- 要恢復default值嗎
+	- 不要
+		- slc的vtList由以下加起來
+			- gNfcCfg.readRetryTable
+			- sizeof(READ_RETRY_TAB_HEADER)
+			- xlcRegCnt * dataCntForOneReg * xlcTotalRRCnt
+			- retrySeq * dataCntForOneReg
+		- xlc的vtList由以下加起來
+			- gNfcCfg.readRetryTable
+			- sizeof(READ_RETRY_TAB_HEADER)
+			- retrySeq * dataCntForOneReg * xlcRegCnt
+	- 要
+		- vtList由下面加起來
+			- gNfcCfg.readRetryTable
+			- sizeof(READ_RETRY_TAB_HEADER)
+			- xlcTotalRRCnt * dataCntForOneReg * xlcRegCnt
+			- slcTotalRRCnt * dataCntForOneReg
+			- dataCntForOneReg * isSlc * xlcRegCnt
+- 回傳vtList

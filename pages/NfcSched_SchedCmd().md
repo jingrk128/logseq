@@ -1,0 +1,22 @@
+- ### 根據opCmd->state做不同的處理
+- 如果opCmd->state是NFC_SCHED_WAIT_SCHED
+	- 讀取和opCmd同一顆die的WaitQueue - #NfcSched_GetWaitQueue()
+	- 從WaitQueue 取出最上面的opCmd - #DList_Peek()
+	- 如果剩下的cmd fifo足夠的話： - #NfcCheckCmdFifoResource()
+		- 送出read retry cmd - #NfcSchedTrySendCMD() #待辦
+		- 若有成功送出：
+			- 把opCmd從WaitQueue裡抽出 - #DList_Delete()
+			- 把opCmd推入WaitRspQueue - #DList_PushTail()
+			- opCmd->state = NFC_SCHED_WAIT_RESULT;
+- 如果opCmd->state是NFC_SCHED_RECVD_ERR
+	- 處理error的情況 - #NfcSchedHandleError()
+	- 處理的結果是RET_CONTINUE嗎？
+		- 不是 - 結束NfcSched_SchedCmd()
+		- 是opCmd->state = NFC_SCHED_DONE;
+- 如果opCmd->state是NFC_SCHED_DONE
+	- 如果opCmd是child嗎？
+		- 不是 - 結束流程 - #NfcSched_HandleDone() #待辦
+		- 是 - 結束child流程 - #NfcExcp_HandleChildDone() #待辦
+		- 結束NfcSched_SchedCmd()
+- 如果以上皆非
+	- 結束NfcSched_SchedCmd()

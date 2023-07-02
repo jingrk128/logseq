@@ -1,0 +1,28 @@
+- ### 填入header，並依參數決定要結束cmd or 準備下一段cmd
+	- 如果要立刻執行cmd，就填入eos
+	- 決定header填入使用dw的數量並填入header
+	- 如果要立刻執行cmd嗎？
+		- 要
+			- 把cmd填入cmd queue memory - #NfcSeqDrvCopyToCmdQ()
+				- 算出cmd總共花了幾個dw
+				- 讀出queue的tail、start、end、tail reg addr
+				- 算出queue的tail離end還有多少空間
+				- 剩餘空間夠放這次的cmd嗎？
+					- 夠
+						- 把cmd放進cmd queue memory
+						- cmd有填到end嗎?
+							- 有 - 新的tail指到start addr
+							- 沒有 - 新的tail指到tail+cmd q的長度
+							- LATER 先判斷沒有再判斷有，可能會加快一點點速度?
+					- 不夠
+						- 先填cmd到end addr
+						- 剩下的cmd從start addr開始填
+						- 看cmd填到哪，新的tail就指到哪
+				- 把新的tail更新到tail reg
+			- 計算free cmd fifo還剩多少 [[gFreeCfCnt[opCmd->target.ch][opCmd->target.ce] -= cmdCnt;]]
+			- 在opCmd統計目前cmd使用了多少byte
+			- NfcDrv_AddOpCnt()
+		- 不要
+			- 讓下一個header指向cmd q的下一個dw
+				- pSeqAider->pHdr = pSeqAider->pDwPtr;
+				- pSeqAider->pDwPtr++;

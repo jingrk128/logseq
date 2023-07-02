@@ -1,0 +1,216 @@
+C:1,O:1,S:4
+Safe mode...0h, 2h
+
+
+GK2311 ROM v.1.3.1.4.D
+ASIC v.10242h
+build:Mar  9 2020, 20:56:33
+>0: MP core0 start running...CPU CLK:400Mhz, SYS CLK:400Mhz.
+0: stack init b 0x4028b958 Sz 0x106a8 t 0x4029c000
+
+cpu0>0: version numer: v.1h.2h.1h.0h.2h.r26622
+0: NFC: timeout ch:2, ce:0, die:2, block:8
+0: read status fail: die:2 fail, ret b.
+0: NFC: timeout ch:3, ce:0, die:3, block:8
+0: read status fail: die:3 fail, ret b.
+0: NFC: timeout ch:0, ce:1, die:4, block:8
+0: read status fail: die:4 fail, ret b.
+0: NFC: timeout ch:1, ce:1, die:5, block:8
+0: read status fail: die:5 fail, ret b.
+0: NFC: timeout ch:2, ce:1, die:6, block:8
+0: read status fail: die:6 fail, ret b.
+0: NFC: timeout ch:3, ce:1, die:7, block:8
+0: read status fail: die:7 fail, ret b.
+0: NFC: timeout ch:0, ce:2, die:8, block:8
+0: read status fail: die:8 fail, ret b.
+0: NFC: timeout ch:1, ce:2, die:9, block:8
+0: read status fail: die:9 fail, ret b.
+0: NFC: timeout ch:2, ce:2, die:10, block:8
+0: read status fail: die:10 fail, ret b.
+0: NFC: timeout ch:3, ce:2, die:11, block:8
+0: read status fail: die:11 fail, ret b.
+0: NFC: timeout ch:0, ce:3, die:12, block:8
+0: read status fail: die:12 fail, ret b.
+0: NFC: timeout ch:1, ce:3, die:13, block:8
+0: read status fail: die:13 fail, ret b.
+0: NFC: timeout ch:2, ce:3, die:14, block:8
+0: read status fail: die:14 fail, ret b.
+0: NFC: timeout ch:3, ce:3, die:15, block:8
+0: read status fail: die:15 fail, ret b.
+0: NFC: timeout ch:0, ce:4, die:16, block:8
+0: read status fail: die:16 fail, ret b.
+0: NFC: timeout ch:1, ce:4, die:17, block:8
+0: read status fail: die:17 fail, ret b.
+0: NFC: timeout ch:2, ce:4, die:18, block:8
+0: read status fail: die:18 fail, ret b.
+0: NFC: timeout ch:3, ce:4, die:19, block:8
+0: read status fail: die:19 fail, ret b.
+0: NFC: timeout ch:0, ce:5, die:20, block:8
+0: read status fail: die:20 fail, ret b.
+0: NFC: timeout ch:1, ce:5, die:21, block:8
+0: read status fail: die:21 fail, ret b.
+0: NFC: timeout ch:2, ce:5, die:22, block:8
+0: read status fail: die:22 fail, ret b.
+0: NFC: timeout ch:3, ce:5, die:23, block:8
+0: read status fail: die:23 fail, ret b.
+0: NFC: timeout ch:0, ce:6, die:24, block:8
+0: read status fail: die:24 fail, ret b.
+0: NFC: timeout ch:1, ce:6, die:25, block:8
+0: read status fail: die:25 fail, ret b.
+0: NFC: timeout ch:2, ce:6, die:26, block:8
+0: read status fail: die:26 fail, ret b.
+0: NFC: timeout ch:3, ce:6, die:27, block:8
+0: read status fail: die:27 fail, ret b.
+0: NFC: timeout ch:0, ce:7, die:28, block:8
+0: read status fail: die:28 fail, ret b.
+0: NFC: timeout ch:1, ce:7, die:29, block:8
+0: read status fail: die:29 fail, ret b.
+0: NFC: timeout ch:2, ce:7, die:30, block:8
+0: read status fail: die:30 fail, ret b.
+0: NFC: timeout ch:3, ce:7, die:31, block:8
+0: read status fail: die:31 fail, ret b.
+: Disable LDPC-1 Clock.
+0: FSH CLK:33Mhz.
+0: [SR]IDEMA-UsrSize:62522712KiB nandSize:74170368KiB
+0: scan BV Pass
+0: gGoSysVirginBoot 0
+0: Clear Pcie Interrupt Status Done !!
+0: logicalSpaceSize 0 Kib
+0: DDR HW exist: 1
+0: sn:2020                 20
+0: mn:IGL62064P1CN4D0104 18
+0: tempKb:62522712 Sectors:125045424
+0: IOsingle,IOdiff,odt: 2h, 1h, 6h
+0: def dll[R]:52, 56, 60, 52
+0: def dll[W]:18, 12, 35, 62
+0: DLL training is disabled
+0: repeat start,type 0,pe 0,rdt 0
+0: [SysRoot]sys config block 27
+0: [SysRoot]sys config block 26
+0: [SysRoot]sys config block 25
+0: [SysRoot]sys config block 24
+0: [SysRoot]sys meta vector block 23
+0: [SysRoot]sys meta vector block 22
+0: [SysRoot]sys meta vector block 21
+0: [SysRoot]sys meta vector block 20
+0: check Capacity 2, 125045424, 125045424
+0: [VCMD] NvmeVscFlush dw12 0
+0: [VCMD] NvmeVscDownload
+0: [VCMD] NvmeVscDownload
+0: [VCMD] NvmeVscDownload
+0: [VCMD] NvmeVscDownload
+0: [VCMD] NvmeVscDownload
+0: [VCMD] NvmeVscDownload
+0: [VCMD] NvmeVscDownload
+0: [VCMD] NvmeVscDownload
+0: [VCMD] NvmeVscDownload
+0: [VCMD] NvmeVscDownload
+0: [VCMD] NvmeVscDownload
+0: [VCMD] NvmeVscDownload
+0: [VCMD] NvmeVscDownload
+0: [VCMD] NvmeVscDownload
+0: [VCMD] NvmeVscDownload
+0: sm2 enc falg:0x0
+0: small-->ID:
+0:
+0: 0x31 0: 0x32 0: 0x33 0: 0x34 0: 0x35 0: 0x36 0: 0x37 0: 0x38 0: 0x31 0: 0x32 0: 0x33 0: 0x34 0: 0x35 0: 0x36 0: 0x37 0: 0x38 0:
+0: small-->publicKey:
+0:
+0: 0x4 0: 0x8d 0: 0xc0 0: 0x97 0: 0xdc 0: 0x26 0: 0x74 0: 0xb9 0: 0x63 0: 0x25 0: 0x78 0: 0x53 0: 0x19 0: 0x25 0: 0x9e 0: 0xd9 0:
+0: 0xa7 0: 0xf3 0: 0xd1 0: 0x20 0: 0xe 0: 0xa9 0: 0xe3 0: 0x21 0: 0x99 0: 0x18 0: 0x25 0: 0x6f 0: 0x1 0: 0x7d 0: 0x77 0: 0xf0 0:
+0: 0x6 0: 0x48 0: 0xb1 0: 0xb5 0: 0x96 0: 0xc8 0: 0xb6 0: 0xc2 0: 0x7b 0: 0x97 0: 0x87 0: 0x6d 0: 0x3c 0: 0xb9 0: 0x46 0: 0x66 0:
+0: 0xd1 0: 0x65 0: 0xac 0: 0x7 0: 0x3d 0: 0xac 0: 0xbb 0: 0xa8 0: 0x8b 0: 0x3 0: 0xa8 0: 0x5c 0: 0x43 0: 0x3e 0: 0xc1 0: 0x2c 0:
+0: 0x70 0:
+0: small-->Z:
+0:
+0: 0xc 0: 0x45 0: 0xcd 0: 0xaf 0: 0xe1 0: 0x34 0: 0xd7 0: 0x37 0: 0x6a 0: 0x32 0: 0x5 0: 0xdf 0: 0x0 0: 0x8 0: 0x7a 0: 0xc7 0:
+0: 0xc4 0: 0x63 0: 0x6f 0: 0xde 0: 0x39 0: 0xd6 0: 0x17 0: 0x24 0: 0x7 0: 0xff 0: 0xe7 0: 0xc7 0: 0x51 0: 0x8f 0: 0x9e 0: 0x75 0:
+0: small-->plaintxt:  len:0
+0:
+0: 0x98 0: 0xf0 0: 0x9f 0: 0xe5 0: 0x98 0: 0xf0 0: 0x9f 0: 0xe5 0: 0x98 0: 0xf0 0: 0x9f 0: 0xe5 0: 0x98 0: 0xf0 0: 0x9f 0: 0xe5 0:
+0: 0x98 0: 0xf0 0: 0x9f 0: 0xe5 0: 0xfe 0: 0xff 0: 0xff 0: 0xea 0: 0xc6 0: 0x44 0: 0x0 0: 0xea 0: 0xc6 0: 0x44 0: 0x0 0: 0xea 0:
+0: small finish--->plaintxt:  len:74e30
+0:
+0: 0x58 0: 0x49 0: 0x54 0: 0x43 0: 0x32 0: 0x33 0: 0x31 0: 0x31 0: 0x44 0: 0x4c 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0:
+0: 0xa0 0: 0x3 0: 0x0 0: 0x0 0: 0xb8 0: 0x47 0: 0x95 0: 0x18 0: 0x31 0: 0x30 0: 0x31 0: 0x30 0: 0x30 0: 0x30 0: 0x30 0: 0x32 0:
+0:
+0: 0x40 0: 0x30 0: 0x8d 0: 0x2 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0:
+0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x1 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0:
+0: small finish-->E:
+0:
+0: 0xb5 0: 0xdc 0: 0x2f 0: 0xaa 0: 0x76 0: 0x5d 0: 0xa9 0: 0x90 0: 0xcf 0: 0x8b 0: 0x7c 0: 0x2a 0: 0xe7 0: 0xe9 0: 0x3e 0: 0xbb 0:
+0: 0x2b 0: 0x32 0: 0xdd 0: 0x5f 0: 0xb7 0: 0xf9 0: 0x8a 0: 0x8 0: 0x9a 0: 0x2 0: 0x59 0: 0x3d 0: 0x6a 0: 0xb1 0: 0x7f 0: 0xe3 0:
+0: [VCMD] NvmeVscFlush dw12 1
+0: [SR]FW Flush Sz:491520 Sgl:27638 Entry:1 PagesPerCopy:30
+0: Seg crc:be207821h
+0: Total crc:be207821h
+0: [SR]FW Flush Sz:491520 Sgl:27638 Entry:1 PagesPerCopy:30
+0: Seg crc:be207821h
+0: Total crc:be207821h
+0: [VCMD] NvmeVscDownload
+0: [VCMD] NvmeVscDownload
+0: sm2 enc falg:0x0
+0: small-->ID:
+0:
+0: 0x31 0: 0x32 0: 0x33 0: 0x34 0: 0x35 0: 0x36 0: 0x37 0: 0x38 0: 0x31 0: 0x32 0: 0x33 0: 0x34 0: 0x35 0: 0x36 0: 0x37 0: 0x38 0:
+0: small-->publicKey:
+0:
+0: 0x4 0: 0x8d 0: 0xc0 0: 0x97 0: 0xdc 0: 0x26 0: 0x74 0: 0xb9 0: 0x63 0: 0x25 0: 0x78 0: 0x53 0: 0x19 0: 0x25 0: 0x9e 0: 0xd9 0:
+0: 0xa7 0: 0xf3 0: 0xd1 0: 0x20 0: 0xe 0: 0xa9 0: 0xe3 0: 0x21 0: 0x99 0: 0x18 0: 0x25 0: 0x6f 0: 0x1 0: 0x7d 0: 0x77 0: 0xf0 0:
+0: 0x6 0: 0x48 0: 0xb1 0: 0xb5 0: 0x96 0: 0xc8 0: 0xb6 0: 0xc2 0: 0x7b 0: 0x97 0: 0x87 0: 0x6d 0: 0x3c 0: 0xb9 0: 0x46 0: 0x66 0:
+0: 0xd1 0: 0x65 0: 0xac 0: 0x7 0: 0x3d 0: 0xac 0: 0xbb 0: 0xa8 0: 0x8b 0: 0x3 0: 0xa8 0: 0x5c 0: 0x43 0: 0x3e 0: 0xc1 0: 0x2c 0:
+0: 0x70 0:
+0: small-->Z:
+0:
+0: 0xc 0: 0x45 0: 0xcd 0: 0xaf 0: 0xe1 0: 0x34 0: 0xd7 0: 0x37 0: 0x6a 0: 0x32 0: 0x5 0: 0xdf 0: 0x0 0: 0x8 0: 0x7a 0: 0xc7 0:
+0: 0xc4 0: 0x63 0: 0x6f 0: 0xde 0: 0x39 0: 0xd6 0: 0x17 0: 0x24 0: 0x7 0: 0xff 0: 0xe7 0: 0xc7 0: 0x51 0: 0x8f 0: 0x9e 0: 0x75 0:
+0: small-->plaintxt:  len:0
+0:
+0: 0x98 0: 0xf0 0: 0x9f 0: 0xe5 0: 0x98 0: 0xf0 0: 0x9f 0: 0xe5 0: 0x98 0: 0xf0 0: 0x9f 0: 0xe5 0: 0x98 0: 0xf0 0: 0x9f 0: 0xe5 0:
+0: 0x98 0: 0xf0 0: 0x9f 0: 0xe5 0: 0xfe 0: 0xff 0: 0xff 0: 0xea 0: 0xc6 0: 0x44 0: 0x0 0: 0xea 0: 0xc6 0: 0x44 0: 0x0 0: 0xea 0:
+0: small finish--->plaintxt:  len:a1d0
+0:
+0: 0x58 0: 0x49 0: 0x54 0: 0x43 0: 0x32 0: 0x33 0: 0x31 0: 0x31 0: 0x44 0: 0x4c 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0:
+0: 0x49 0: 0x0 0: 0x0 0: 0x0 0: 0x32 0: 0x68 0: 0x7d 0: 0x7c 0: 0x31 0: 0x30 0: 0x31 0: 0x30 0: 0x30 0: 0x30 0: 0x30 0: 0x32 0:
+0:
+0: 0x0 0: 0x0 0: 0x80 0: 0x2a 0: 0x40 0: 0xc 0: 0x8e 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0:
+0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x1 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0: 0x0 0:
+0: small finish-->E:
+0:
+0: 0x44 0: 0x9c 0: 0x17 0: 0x25 0: 0x30 0: 0x73 0: 0x8f 0: 0xf4 0: 0xb3 0: 0x3e 0: 0x6a 0: 0x55 0: 0x56 0: 0x1e 0: 0xf7 0: 0xc3 0:
+0: 0xf2 0: 0xc4 0: 0x4b 0: 0x75 0: 0x85 0: 0x53 0: 0xc9 0: 0x10 0: 0x46 0: 0xff 0: 0xc8 0: 0x23 0: 0x95 0: 0xfa 0: 0x58 0: 0xc3 0:
+0: [VCMD] NvmeVscFlush dw12 2
+f:1h, s:8h
+
+C:1,O:1,S:4
+
+Loader build:Apr 20 2023, 19:14:33
+ROM ver: 1314000Dh
+0: stack init b 0x26740 Sz 0x18c0 t 0x28000
+1: core1 start running...
+
+cpu0>1: stack init b 0x26020 Sz 0x1fe0 t 0x28000
+0-136-0-26622-0-0-0-0-01: [SR]IDEMA-UsrSize:62522712KiB nandSize:74170368KiB
+0-156-0-26622-0-0-0-0-02: [SR]Scan Boot Vecotr ok:3
+0-185-0-26622-0-0-0-0-03: [SR]Scan SysCfg:0xb-1 0xffff-1
+0-189-0-26622-0-0-0-0-04: [SR]Load SysCfg
+0-193-0-26622-0-0-0-0-05: [SR]RamDrvMode 0x0 in sys config
+0-203-0-26622-0-0-0-0-06: [SR]Scan sysmeta vector ffff-0 ffff-0
+0-206-0-26622-0-0-0-0-07: [SR]Miss Sys Meta Vector->virgin Start
+0-212-0-26622-0-0-0-0-08: [SR][CAP]User:125045424 Sec Id:125045424 Sec
+0-227-0-26622-0-0-0-0-09: [PHY]TBW:40 Calculate PB cnt,sys:250,slc:0,xlc:914,slc cache:0
+0-241-0-26622-0-0-0-0-0a: [PHY]Good:985(PEC:985),Partially good:11,Bad:2
+0-253-0-26622-0-0-0-0-0b: [PHY]Valid PB cnt not enough 985 + 5 < 1164 MP Fail!
+
+0 Assert@PhysicalSpaceMgr.c[685]!  pfn:0x0 sp:0x26560
+
+0 Assert@PhysicalSpaceMgr.c[685]!
+0-265-0-26622-0-0-0-0-0e: Dump cstack SP: 0x26530
+0-270-0-26622-0-0-0-0-0f: Dump PB state of pool:0.
+0-274-0-26622-0-0-0-0-10: pb:0, state: owner:DEVSELFTEST, protect:1 validCnt:0x9ff098
+0-282-0-26622-0-0-0-0-11: pb:1, state: owner:DEVSELFTEST, protect:1 validCnt:0x9ff098
+0-289-0-26622-0-0-0-0-12: pb:2, state: owner:EVENTLOG, protect:1 validCnt:0x9ff098
+0-297-0-26622-0-0-0-0-13: pb:3, state: owner:SYS, protect:1 validCnt:0x9ff098
+0-303-0-26622-0-0-0-0-14: pb:4, state: owner:HIBERNATION, protect:1 validCnt:0x9ff098
+0-311-0-26622-0-0-0-0-15: pb:5, state: owner:, protect:1 validCnt:0xfffffe
+0-318-0-26622-0-0-0-0-16: pb:6, state:FREE owner:, protect:0 validCnt:0x6826

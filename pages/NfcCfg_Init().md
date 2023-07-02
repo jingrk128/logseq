@@ -1,0 +1,19 @@
+- ### 根據gNfcCfg.validChMap和gNfcCfg.ceMapPerCh[]來決定
+	- ### gNfcChNum[]和gNfcExistChs
+	- ### gNfcCeNum[]和gNfcExistCes
+- ### 畫出die map
+- 畫出die map - #NfcCfgInitDieMap()
+- gNfcExistChs = gNfcExistCes = 0;
+- 如果gNfcCfg.validChMap的bit x是1，就做以下
+	- 把gNfcChNum[gNfcExistChs]設為x
+		- gNfcChNum[]是按順序記錄實際存在的ch
+	- gNfcExistChs++
+- 以下是循序檢查ce0-ce7，只要有一個ch存在ce(x)
+  就設定gNfcCeNum[gNfcExistCes]和gNfcExistCes++
+	- 設ce=0，NFC_MAX_CE_NUM_PER_CH是多少，以下就重覆幾次
+		- 設chIdx=0
+		- gNfcExistChs是多少，以下就重覆幾次，每重覆一次chIdx就+1
+			- 如果gNfcCfg.ceMapPerCh[gNfcChNum[chIdx]]的bit x是1
+				- 把gNfcCeNum[gNfcExistCes]設為x
+				- gNfcExistCes++
+				- 提前結束迴圈，ce+1

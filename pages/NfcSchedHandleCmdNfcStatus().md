@@ -1,0 +1,11 @@
+- ### 依據nfc的回報結果做相應的事
+- 依據tag取得opCmd
+- nfc回報結果記錄在opCmd->nfcReason
+- 看opCmd使用多少byte，加回到cmd fifo free cnt -#NfcSeqDrv_IncCfFreeCnt()
+- 當nfc回報ok
+	- opCmd->cmd->result = NF_RET_OP_OK
+	- opCmd->state = NFC_SCHED_DONE;
+- 當nfc回報timeout
+	- opCmd->cmd->result = NF_RET_OP_TIMEOUT;
+	- opCmd->state = NFC_SCHED_RECVD_ERR;
+- 把opCmd放進gNfcRspQ

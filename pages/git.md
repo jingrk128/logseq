@@ -1,0 +1,11 @@
+- ### checkout
+	- checkout的功能為移動HEAD
+		- 如果HEAD當前所在的commit沒有branch標籤，又使用checkout把HEAD移走的話，該commit會消失在sourcetree
+		- 若要把HEAD移回該commit，需要開termial，使用git reset --hard (commit編號)指令把HEAD移動過去
+		- 若不知道該commit的編號，就需要用git reflog指令找回該commit編號
+	- reset和checkout的功能類似
+		- reset是移動branch
+			- [【狀況題】剛才的 Commit 後悔了，想要拆掉重做… - 為你自己學 Git | 高見龍 (gitbook.tw)](https://gitbook.tw/chapters/using-git/reset-commit)
+		- check是移動HEAD
+- ### git教學連結
+	- [1 為什麼要學Git - YouTube](https://www.youtube.com/watch?v=PNEM7CH3ZAg&list=PLYrA-SsMvTPOZeB6DHvB0ewl3miMf-2tj&ab_channel=%E5%85%AD%E8%A7%92%E5%AD%B8%E9%99%A2)
