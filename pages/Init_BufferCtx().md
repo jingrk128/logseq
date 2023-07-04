@@ -1,0 +1,3 @@
+- 申請空間 - LinearAllocator_GetUnused()
+	- addr存在bufStart
+	- size儲存在bufSize
