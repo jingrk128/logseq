@@ -25,6 +25,7 @@
 		- function
 			- nfc_stress_test
 				- [[NfcTest_InitPB()]]
+				- [[Init_BufferCtx()]]
 				-
 			- [[Nfc_ResetFlashCmd()]]
 			- [[Nfc_ReadStatus()]]
