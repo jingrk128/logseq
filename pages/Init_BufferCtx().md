@@ -8,5 +8,6 @@
 		- 假設是第n個dw(第一個dw的n是1)
 		- high 16bit: 0x7fff-ch-(0x400-n)
 		- low 16bit: ch+(0x400-n)
--
+- 以下執行READ_CTX_COUNT次 ()
+  `#define READ_CTX_COUNT          (NFC_MAX_CH_NUM * 6)`
 	-
