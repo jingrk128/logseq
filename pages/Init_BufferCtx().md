@@ -6,5 +6,5 @@
 		- `#define BUFFER_SLICE_SIZE       (4*1024)`
 	- 以dw為單位填寫buf的pattern，pattern的規則如下：
 		- 假設是第n個dw(第一個dw的n是0)
-		- high 16bit:
+		- high 16bit: 0x7fff-ch-
 		-
