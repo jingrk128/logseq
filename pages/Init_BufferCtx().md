@@ -5,5 +5,6 @@
 	- gWriteBufferPool[ch]設為bufStart+ch*BUFFER_SLICE_SIZE
 		- `#define BUFFER_SLICE_SIZE       (4*1024)`
 	- 以dw為單位填寫buf的pattern，pattern的規則如下：
+		- 假設是第n個dw
 		- high 16bit:
 		-
