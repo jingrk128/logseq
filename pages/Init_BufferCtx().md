@@ -11,5 +11,6 @@
 - 設定gReadBufferPool[]
 	- gReadBufferPool[0]設為bufStart
 	- 之後每個gReadBufferPool[]都往後累加BUFFER_SLICE_SIZE
-- 初始化gFreeRdCtx的linked list
-- 初始化gFreeWrCtx的linked list
+- 初始化gFreeRdCtx的linked list - #SList_Init()
+- 初始化gFreeWrCtx的linked list - #SList_Init()
+-
