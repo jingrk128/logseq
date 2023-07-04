@@ -19,4 +19,5 @@
 	- gFreeWrCtx指向gWriteCtx[n-1] (最後一個元素)
 	- gWriteCtx[n-1]指向gWriteCtx[n-2]...以此類推
 	- gWriteCtx[0]指向gFreeWrCtx
-- 把gReadCtx[]加入gFreeWrCtx
+- 把gReadCtx[]加入gFreeRdCtx - #SList_Push()
+	- 方法和把gWriteCtx[]加入gFreeWrCtx相同
