@@ -15,5 +15,7 @@
 - 初始化gFreeWrCtx的linked list - #SList_Init()
 - 把gWriteCtx[]加入gFreeWrCtx - #SList_Push()
 	- 最後會變成：
-	- gFreeWrCtx指向
+	- 假設gWriteCtx[]有n個元素
+	- gFreeWrCtx指向gWriteCtx[n-1]
+	- gWriteCtx[n]
 -
