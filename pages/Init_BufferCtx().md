@@ -13,4 +13,5 @@
 	- 之後每個gReadBufferPool[]都往後累加BUFFER_SLICE_SIZE
 - 初始化gFreeRdCtx的linked list - #SList_Init()
 - 初始化gFreeWrCtx的linked list - #SList_Init()
-- 把gWriteCtx[]依序接在gFreeWrCtx的後面，最後一個gWriteCtx[]指
+- 把gWriteCtx[]加入gFreeWrCtx - #SList_Push()
+-
