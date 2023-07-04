@@ -25,7 +25,9 @@
 		- function
 			- nfc_stress_test
 				- [[NfcTest_InitPB()]]
+				  id:: 64a3e944-4be7-4980-92ea-292b2304a036
 				- [[Init_BufferCtx()]]
+				  id:: 64a3e9c2-6547-4db3-b518-c828f1bf2cfa
 				-
 			- [[Nfc_ResetFlashCmd()]]
 			- [[Nfc_ReadStatus()]]
