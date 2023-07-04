@@ -16,6 +16,7 @@
 - 把gWriteCtx[]加入gFreeWrCtx - #SList_Push()
 	- 最後會變成：
 	- 假設gWriteCtx[]有n個元素
-	- gFreeWrCtx指向gWriteCtx[n-1]
-	- gWriteCtx[n]
--
+	- gFreeWrCtx指向gWriteCtx[n-1] (最後一個元素)
+	- gWriteCtx[n-1]指向gWriteCtx[n-2]...以此類推
+	- gWriteCtx[0]指向gFreeWrCtx
+- 把gReadCtx[]加入gFreeWrCtx
