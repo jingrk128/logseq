@@ -23,7 +23,8 @@
 		- [[print]]
 		- [[code_size]]
 		- function
-		  collapsed:: true
+			- nfc_stress_test
+				-
 			- [[Nfc_ResetFlashCmd()]]
 			- [[Nfc_ReadStatus()]]
 			- [[NfcCheckSubmitResource()]]
