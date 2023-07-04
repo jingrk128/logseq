@@ -14,4 +14,5 @@
 - 初始化gFreeRdCtx的linked list - #SList_Init()
 - 初始化gFreeWrCtx的linked list - #SList_Init()
 - 把gWriteCtx[]加入gFreeWrCtx - #SList_Push()
+	- gWriteCtx[0]指向
 -
