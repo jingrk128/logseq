@@ -2,4 +2,5 @@
 	- addr存在bufStart
 	- size儲存在bufSize
 - 每個ch依序執行以下：
-	- gWriteBufferPool[ch]設為每個ch的buf設
+	- gWriteBufferPool[ch]設為bufStart+ch*BUFFER_SLICE_SIZE
+		-
