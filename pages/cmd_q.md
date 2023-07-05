@@ -51,7 +51,6 @@
 			  06-[0x00000032]
 			  ```
 - ### template mode program
-  collapsed:: true
 	- #2311 #trunk #svn25943 #DL_Flashdisk_ASIC_YMTC_X1_9050_CLIENT
 	- block = 369
 	  wl = 0
