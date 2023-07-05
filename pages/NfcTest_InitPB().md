@@ -1,3 +1,3 @@
 - ### 填寫gSblkIndex[]
--
+- 從第MAX_TESTED_BLOCK個block開始，對MAX_TESTED_BLOCK個block做erase
 -
