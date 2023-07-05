@@ -7,8 +7,6 @@
 		- badBlock=0
 		- 對每個die依序執行以下：
 			- 對每個plane依序執行single plane的raw read
-			-
-		- 先對plane0做，再對plane1做
-		- 如果任何一次read讀到的第一個byte不是0xff，則badBlock++
+			- 如果任何一次read讀到的第一個byte不是0xff，則badBlock++
 	- 如果badBlock等於0，則
 		-
