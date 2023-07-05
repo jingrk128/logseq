@@ -1,11 +1,12 @@
 - ### 填寫gSblkIndex[]
-- badBlock=0
+-
 - 從第SATRT_BLOCK個block開始，對MAX_TESTED_BLOCK個block依序做以下步驟：
 	- n=0
 	- 每個die都對第SATRT_BLOCK+n個block做multi plane erase
 	- 如果每個die都erase成功：
+		- badBlock=0
 		- 對個die都對該block都raw read
 		- 先對plane0做，再對plane1做
 		- 如果任何一次read讀到的第一個byte不是0xff，則badBlock++
-	- 如果badBlock等於0
+	- 如果badBlock等於0，則
 		-
