@@ -6,5 +6,6 @@
 	- 如果每個die都erase成功：
 		- 對個die都對該block都raw read
 		- 先對plane0做，再對plane1做
-		- 如果讀到的第一個byte不是0xff，則badBlock++
+		- 如果任何一次read讀到的第一個byte不是0xff，則badBlock++
+	- 如果badBlock等於0
 		-
