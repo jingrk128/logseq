@@ -10,4 +10,6 @@
 				- 對page0執行single plane的raw read - #Nfc_ReadRawData() #待辦
 				- 如果read讀到的第一個byte不是0xff，則badBlock++
 		- 如果badBlock等於0，則
+			- gSblkIndex[pbIdx] = block;
+			  pbIdx++;
 			-
