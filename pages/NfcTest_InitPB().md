@@ -6,7 +6,8 @@
 	- 如果每個die都erase成功：
 		- badBlock=0
 		- 對每個die依序執行以下：
-			- 對每個plane依序執行single plane的raw read - #Nfc_ReadRawData() #待辦
-			- 如果任何一次read讀到的第一個byte不是0xff，則badBlock++
+			- 對每個plane依序執行
+				- single plane的raw read - #Nfc_ReadRawData() #待辦
+				- 如果read讀到的第一個byte不是0xff，則badBlock++
 	- 如果badBlock等於0，則
 		-
