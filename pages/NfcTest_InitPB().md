@@ -1,8 +1,8 @@
 - ### 填寫gSblkIndex[]
-- n=0
+- n = 0
 - block_idx = SATRT_BLOCK+n
--
-- 從第block_idx個block開始，對MAX_TESTED_BLOCK個block依序做以下步驟：
+- pbIdx = 0
+- 從第block_idx個block開始，重覆執行以下，直到pbIdx等於MAX_TESTED_BLOCK為止：
 	- 每個die都對第SATRT_BLOCK+n個block做multi plane erase
 	- 如果每個die都erase成功：
 		- badBlock=0
