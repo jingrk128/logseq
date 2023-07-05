@@ -4,3 +4,5 @@
 	- 每個die都對第SATRT_BLOCK+n個block做multi plane erase
 	- 如果每個die都erase成功：
 		- 對個die都對該block都read
+		- 先對plane0做，再對plane1做
+		-
