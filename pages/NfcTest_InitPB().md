@@ -13,5 +13,6 @@
 		- 如果badBlock等於0，則
 			- gSblkIndex[pbIdx] = block_idx;
 			  pbIdx++;
+		-
 	- n++
 		-
