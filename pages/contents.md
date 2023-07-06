@@ -4,7 +4,8 @@
 	- [[reset]]
 	- [[開卡]]
 	- [[檢查有無sw_queue]]
-	- [[無法print]]
+	- [[print]]
+		- [[無法print]]
 	- [[jtag的接法]]
 	- [[IAR load code]]
 	- [[die總數]]
@@ -20,7 +21,6 @@
 			- [NfcDirect_ReadPageData()](645dabf4-9411-4735-a512-18a39ebd8e4c)
 			- [NFC init flow](64795884-689b-4f4b-82b2-4076688c998e)
 		- [[init_run_scan]]
-		- [[print]]
 		- [[code_size]]
 		- function
 			- nfc_stress_test
