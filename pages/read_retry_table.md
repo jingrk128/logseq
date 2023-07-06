@@ -2,6 +2,7 @@
   id:: 646872ed-c2e6-4397-b34a-a1196ed35154
   定義如下：
 	- ```
+	  0x43, 0x1d, 0x08, 0xa0, 0xa3, 0x06, 0xd5, 0x00,
 	  typedef struct
 	  {
 	      uint8_t xlcRegCnt: 4;
