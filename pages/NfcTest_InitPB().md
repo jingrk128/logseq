@@ -1,4 +1,5 @@
-- ### 填寫gSblkIndex[]
+- ### 從SATRT_BLOCK開始，依序尋找出不是壞塊的block，並填寫到gSblkIndex[]
+  ### 尋找
 - n = 0
 - block_idx = SATRT_BLOCK+n
 - pbIdx = 0
