@@ -3,10 +3,8 @@
 	- block = 369
 	  wl = 0
 	- single plane
-	  collapsed:: true
 	  plane = 0x0
 		- slc
-		  collapsed:: true
 			- ```
 			  00-[0x6400005d]
 			  01-[0x00000000]
@@ -16,7 +14,6 @@
 			  05-[0x00000032]
 			  ```
 		- tlc
-		  collapsed:: true
 			- ```
 			  00-[0x6400005d]
 			  01-[0x00000000]
@@ -26,10 +23,8 @@
 			  05-[0x00000032]
 			  ```
 	- multi plane
-	  collapsed:: true
 	  plane = 0xf
 		- slc
-		  collapsed:: true
 			- ```
 			  00-[0x6400006d]
 			  01-[0x00000000]
@@ -40,7 +35,6 @@
 			  06-[0x00000032]
 			  ```
 		- tlc
-		  collapsed:: true
 			- ```
 			  00-[0x6400006d]
 			  01-[0x00000000]
@@ -51,6 +45,7 @@
 			  06-[0x00000032]
 			  ```
 - ### template mode program
+  collapsed:: true
 	- #2311 #trunk #svn25943 #DL_Flashdisk_ASIC_YMTC_X1_9050_CLIENT
 	- block = 369
 	  wl = 0
