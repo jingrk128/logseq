@@ -24,7 +24,6 @@
 		- [[init_run_scan]]
 		- [[code_size]]
 		- function
-		  collapsed:: true
 			- nfc_stress_test
 				- [[NfcTest_InitPB()]]
 				  id:: 64a3e944-4be7-4980-92ea-292b2304a036
