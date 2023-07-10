@@ -14,7 +14,7 @@
 		- [YMTC special code flow for 南山](648c74d6-ab01-43b7-adfd-07e6a10ddba4)
 		- [YMTC erase patch](649a42ce-fa8d-44da-8f9a-2df617590b29)
 		- [打開SUPPORT_ELITE_IN_CLIENT，開卡會assert](64a76cd4-eac0-4038-9e73-f0562963791d)
-		- ((64a7a358-b689-4819-812b-cfa0d4286c03))
+		- [開卡出現很多壞塊](64a7a358-b689-4819-812b-cfa0d4286c03)
 	- [[摸索FW]]
 		- [[拆解]]
 			- [Nfc_ResetFlashCmd()](644e9083-bc58-47f1-acb6-631bab465ae9)
