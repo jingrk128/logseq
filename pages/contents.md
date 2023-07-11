@@ -30,7 +30,7 @@
 				  id:: 64a3e944-4be7-4980-92ea-292b2304a036
 				- [[Init_BufferCtx()]]
 				  id:: 64a3e9c2-6547-4db3-b518-c828f1bf2cfa
-				-
+				- [NfcStress_MainLoop()](64a62747-f257-4576-b4d5-0b6aaa5f838b)
 			- [[Nfc_ResetFlashCmd()]]
 			- [[Nfc_ReadStatus()]]
 			- [[NfcCheckSubmitResource()]]
