@@ -9,14 +9,15 @@
 			- 把opCmd推入WaitRspQueue - #DList_PushTail()
 			- opCmd->state = NFC_SCHED_WAIT_RESULT;
 - 如果opCmd->state是NFC_SCHED_RECVD_ERR
+	- child的state不會進來這裡，因為child的state固定被設為NFC_SCHED_DONE
 	- 處理error的情況 - #NfcSchedHandleError()
 	- 處理的結果是RET_CONTINUE嗎？
 		- 不是 - 結束NfcSched_SchedCmd()
 		- 是opCmd->state = NFC_SCHED_DONE;
 - 如果opCmd->state是NFC_SCHED_DONE
-	- 如果opCmd是child嗎？
-		- 不是 - 結束流程 - #NfcSched_HandleDone() #待辦
-		- 是 - 結束child流程 - #NfcExcp_HandleChildDone() #待辦
+	- opCmd是child嗎？ - #NfcCom_IsChildCmd()
+		- 不是 - 結束流程 - #NfcSched_HandleDone()
+		- 是 - 結束child流程 - #NfcExcp_HandleChildDone()
 		- 結束NfcSched_SchedCmd()
 - 如果以上皆非
 	- 結束NfcSched_SchedCmd()

@@ -1,0 +1,6 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+	- 5.1. Power Cycle Requirements
+- Vcc和Vccq要低於100mV至少100ns
+	- 如果沒有滿足此條件，會讓nand進入不確定的狀態
+- 在busy狀態，nand不應該power off
+	- 但文件也沒提及這樣會發生什麼事

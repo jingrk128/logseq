@@ -1,0 +1,3 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- Program Suspend Operation time
+- X3-9070: 0-50us

@@ -1,0 +1,5 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- Command, address, or data input cycle to data output cycle (RE_n low)
+- X3-9070
+	- min 80ns
+	- max none

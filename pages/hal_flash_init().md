@@ -1,0 +1,19 @@
+- 設定FCON_INFO的write mask為no mask
+- 在所有channel把FCTL_HS_MODE的PIO DAT LAST和PIO DAT FIRST都設1
+- 在所有channel設定CLE後的delay cycle數為0xf
+- 在FCON_FLH_FUNC設定Don't mask sign-off by firmware
+- 在所有channel如果在FCTL_CHNL_SET是設定為EDO mode，就在DLL_GCK_DLY裡設定legacy read delay cell usage為0x1A0
+- 在所有channel的FCTL_CNT_ONE設定count one enable以及count zero
+- 在FCON_FCE_ENB設定所有的CE都disable
+- 在所有channel的FCTL_DMA_CFG設定FSA是根據FCTL_FSA_SEL[4:0]
+- 在所有channel的FCTL_DMA_CFG設定enable UDMA
+- 把FCON_E3D_BASE設為0x00050000
+- 在所有channel的FCTL_CHNL_SET設定Inversion bypass以及SET_SPR_INV_BYPASS
+- 在所有channel的FCTL_CHNL_SET設定dummy data的長度為0x40
+- 在FCON_ADR_GEN設定開啟column addr自動產生以及產生的來源指定FSA
+- 在FCON_ADR_GEN設定
+	- frame ptr auto update after address generate enable
+	- frame ptr auto update next frame ptr when DMA done
+- 在FCTL_OTHER_SET設定fixed value為0xff
+- 在FCON_FLH_FUNC設定Sign-off the frames after uncorrectable error occurs
+- 在所有channel的FCTL_INT_INF_0設定clear uncorrectable fail map FIFO

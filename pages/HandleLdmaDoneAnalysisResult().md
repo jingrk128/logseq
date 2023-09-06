@@ -10,5 +10,5 @@
 		- to do
 		- 跳出迴圈
 	- channel的error message填寫gCwMsgList[]和errBitmap - #HandleLdpcErrStatus()
-	- NfcDrv_SubOpCnt(1)
+	- gOpCnt減1 - #NfcDrv_SubOpCnt()
 	- 進gLdmaDoneHandle處理ldma_done_status_fifo_data的內容 - #NfcSchedHandleLdmaDone()

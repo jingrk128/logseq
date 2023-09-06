@@ -1,0 +1,3 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- WE_n HIGH to R/B_n LOW
+- X3-9070 min:none, max:100ns

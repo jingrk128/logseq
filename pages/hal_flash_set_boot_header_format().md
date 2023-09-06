@@ -1,0 +1,11 @@
+- 依照buf_offset來取得buf的位置 - hal_sys_get_buffer_address()
+- 備份reg的值
+	- FCTL_CHNL_SET存在buf[0]
+	- FCTL_OTHER_SET存在buf[3]
+	- FCTL_CNT_ONE存在buf[4]
+	- FCON_GEN_CONV_IDX4存在buf[5]
+- 所有channel的FCTL_CHNL_SET[12]設為spare conversion enabled
+- 所有channel的FCTL_CHNL_SET[2:0]設為禁用LDPC
+- 所有channel的FCTL_CNT_ONE[31:30]
+	- 設為count one enable以及count zero
+- 所有channel的FCON_GEN_CONV_IDX4[14:12]依page數設定

@@ -1,5 +1,7 @@
 - ### 處理gExcpCtrl
 - 如果指定channel的gNfcRepairQA裡面是空的，就回傳false
+	- 如果channel的gNfcRepairQA是空的，有可能會進來NfcExcpGetNewRepairCmd()嗎？ #問題集
+	- opCmd被推入gNfcRepairQA[ch]這個動作只有在[[NfcExcp_Push2Repaire()]]會被執行
 - 從指定channel的gNfcRepairQA裡撈出opCmd
 - opCmd->option.childCnt設0
 	- NOW 那為什麼在[[NfcExcp_Push2Repaire]]的時候要先設15，不是白設了嗎？#2311 #問題集

@@ -21,7 +21,7 @@
 				- 把新的tail更新到tail reg
 			- 計算free cmd fifo還剩多少 [[gFreeCfCnt[opCmd->target.ch][opCmd->target.ce] -= cmdCnt;]]
 			- 在opCmd統計目前cmd使用了多少byte
-			- NfcDrv_AddOpCnt()
+			- gOpCnt加1 - #NfcDrv_AddOpCnt()
 		- 不要
 			- 讓下一個header指向cmd q的下一個dw
 				- pSeqAider->pHdr = pSeqAider->pDwPtr;

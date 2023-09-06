@@ -1,0 +1,25 @@
+- [NAND系列-Threshold Voltage & Vt Distribution - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/77975234)
+- https://picx.zhimg.com/70/v2-fbeb7e48acc11c200641bc78e7926527_1440w.webp
+- 上圖中，橫軸是電壓，縱軸是[[probability density function (PDF)]]
+- 以SLC來說，它一個cell只儲存一個bit，也只能表示兩個狀態，所以判斷值的時間也最短，只要判斷一次就行
+	- 如果電壓小於Vread就是1，反之就是0
+- MLC一個cell能儲存兩個bit，一個bit儲存lower page，另一個儲存upper page
+	- 順序是先寫lower page bit，再寫upper page bit
+	- 寫lower page bit的速度最快
+		- 若lower page bit為1，則不動作
+		- 若lower page bit為0，則把電壓充電至00
+	- 寫upper page bit
+		- upper page的電壓控制精度較高，所以速度比lower page慢
+		- lower page bit為1的情況
+			- 若upper page為1，則不動作
+			- 若upper page為0，則把電壓充電至01
+		- lower page為0的情況
+			- 若upper page為1，則把電壓充電至10
+			- 若upper page為0，則不動作
+		-
+		-
+	-
+- [快閃記憶體 - 維基百科，自由的百科全書 (wikipedia.org)](https://zh.wikipedia.org/zh-tw/%E9%97%AA%E5%AD%98)
+- [MLC Nand Flash读操作 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/20214013)
+-
+-

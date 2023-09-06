@@ -1,0 +1,3 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- 如果處於idle status，DQS_t要保持在high，避免啟用到ODT
+	- 如果ODT被設定為disable，則可以不用管DQS_t

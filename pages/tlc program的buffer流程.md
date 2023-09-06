@@ -1,0 +1,13 @@
+- 以ymtc 9050為例，tlc program的cmd有三個階段
+	- 1.80-DMA(lower page)-1A
+		- 80-DMA: 把lower page寫入cache register
+		- 1A: 什麼都不做
+	- 2.80-DMA(middle page)-1A
+		- 80-DMA: 同時把middle page寫入cache register，把lower page寫入page register、
+		- 1A: 什麼都不做
+	- 3.80-DMA(upper page)-10
+		- 80-DMA: 把upper page寫到cache register、middle page寫入page register，lower page寫到cell
+		- 10:
+			- 把upper page寫到page register、把middle page寫到cell
+			- 把upper page寫到cell
+	- ps.1A之後有個tPCBSY，原先以為這段期間也會做推到下一級的動作，但Jason說不是，應該只是處理內部前級buffer的動作

@@ -14,8 +14,8 @@
 		- 把這個opCmd從gNfcRspQ當中給刪掉 - #DList_Delete()
 		- 依據opCmd->state來決定下一步要怎麼做 - #NfcSched_SchedCmd()
 		-
-- 以下步驟重覆兩次，第一次ch的值等於看pCmd所屬於哪個channel
-  第一次ch=channel&(~1)，第二次ch=ch+1
+- 以下步驟重覆兩次
+  第一次ch=pCmd的ch&(~1)，第二次ch=ch+1
 - 為什麼要做兩個ch？#問題集 #已解決
   :LOGBOOK:
   CLOCK: [2023-05-23 Tue 01:03:03]

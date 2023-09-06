@@ -1,0 +1,14 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- 讀取status，可以指定plane
+- CLE有兩種：0x78和0x73，沒有ALE
+	- 0x78是Read Status Enhanced，只能讀一個plane，可以讀取WPN、RDY、ARDY、FAILC、FAIL
+		- 關於FAILC
+			- 當使用page cache program發佈CLE 0x15/0x11時，這個bit的值才有效
+			- 如果nand不支援program cache，這個bit就沒有用了
+	- 0x73是Read Status Enhanced II，可以讀所有的plane的FAIL，同時也能讀取RDY、ARDY
+- 流程：CLE->row addr->tWHR->Dout
+	- row addr只有lun和plane有效，block、page是don't care
+- 如果row addr是無效的，則讀到的status也是無效的
+- read status enhanced也可以用來選擇lun，0x78和0x73都可以
+- 如果data interface是DDR，則執行一次read status會讀到兩筆相同的data
+- 0x78和0x73都不能用在上電後的第一次執行reset

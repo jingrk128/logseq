@@ -1,0 +1,24 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- CLE: 0x87
+- 流程：tProg的期間->0x87->column row addr->[[tPSPD]]
+	- column row addr裡只有lun會用到，其餘都是don't care
+- 有兩個情況會忽略此指令：
+	- lun已經在suspend mode
+	- lun沒有在busy的狀態
+- 執行此指令後，若SR[6]從0變1，此時若SR[2]為1，表示成功suspend
+	- 若SR[2]為0，表示program已經完成，所以沒有suspend
+- 執行此指令後，若SR[0]為1，表示有錯誤發生
+- 在suspend期間允許執行的command
+	- reset 0xff 0xfa 0xfc
+		- 執行後，SR[2]會變0
+	- page read和multi plane read
+		- 如果read的page和program suspend的一樣，則讀到的data就會是無效的
+	- ZQ calibration、set feature、get feature、所有的read status
+		- read status的program pass/fail是無效的
+			- program pass/fail是SR[0]，但是前面又說SR[0]可以判斷suspend pass/fail，program pass/fail的功能已經變成suspend pass/fail了
+		- 不允許set feature更動program相關的設定
+	- cell mode的切換
+		- 這邊說的cell mode是指slc/tlc嗎？ #問題集
+- 如果執行中的program是multi plane，則執行suspend之後，所有plane的program都會被suspend
+- program花費的總時間在執行了suspend後，要再加上[[tPSPD]]
+	-

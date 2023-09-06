@@ -1,0 +1,21 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- CLE是0x90
+- READ ID有兩個addr，分別是0x20和0x00
+- addr 0x20的內容
+	- 如果支援ONFI，前四個byte就是ONFI的ASCII
+		- ‘O’ = 4Fh, ‘N’ = 4Eh, ‘F’ = 46h, and ‘I’ = 49h
+		- 在ONFI 4.0之後，byte4和byte5也是有意義的值
+			- byte4是Power on Interface ID，簡稱IID
+				- 1表示NV-DDR3
+				- 0表示SDR
+				- IID的值是由power cycle時看當下處於何種data interface決定的，且不能被更改
+				- 過了power cycle後用set feature去更改data interface的話，IID的值也不會改變
+				- 如果data interface是DDR2的話，IID會是多少？
+			- byte5在ONFI 4.0尚未定義功能，保留給未來使用
+			- 讀取byte6之後都是無意義的值
+- addr 0x40的內容
+	- byte0是MID(Manufacturer ID)
+	- byte1-5是DID(Device ID)
+- 執行read id時，如果data interface是DDR，那麼每一筆data都會拿到兩次，因為rising和failing edge會各拿到一次
+- 同一顆nand的所有die用read id讀到的值都會是一樣的
+- YMTC X3-9060有4種版本，主要差在Number of LUN per CE不同，所以每一種版本的READ ID都不一樣

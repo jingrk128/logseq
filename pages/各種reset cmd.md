@@ -1,0 +1,31 @@
+- YMTC X1-9050 Package Datasheet Client rev4.0.pdf
+	- FF - reset
+		- 上電後必要的第一個cmd，此時的reset功能為
+			- 把nand從power-up state切換為initialized state
+			- 重新load regitser
+		- 第二次以後的reset，功能為中斷操作
+		- 發佈FF後，同一個CE上的所有lun都會執行reset
+			- 這一點是在5.3.1. Device Initialization裡的第5點提到的
+		- data interface處於DDR2時，執行FF後會變成SDR
+		- data interface處於DDR3時，執行FF後會保持DDR3
+	- FC - synchronous reset
+		- reset target裡的所有lun
+		- 只能用在DDR2和DDR3
+		- 執行FC後，data interface不會改變
+	- FA - reset lun
+		- reset指定的lun
+		- 需要帶row addr
+		- 執行FA後，data interface不會改變
+	- FD - hard reset
+		- 上電後若第一個指令是FD，此時的用途和FF類似
+		- 執行FD後，所有的參數和設定都會回到default
+		- 使用FD前需先執行read status enhanced來指定lun
+			- 可以支援多的lun操作
+				- 意思是可以發好幾個read status enhanced? #問題集
+		- 當在busy狀態時，FD是無效的
+		- 當data interface處於SDR、DDR3、DDR4，執行FD後會保持不變
+		- 當data interface處於DDR2，執行FD後會變成SDR
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+	- FF - reset
+		- 執行FF後，data interface不會改變
+			- 這一點和X1-9050不同，這樣看起來在X3-9070裡FF和FC就一模一樣了

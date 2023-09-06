@@ -1,0 +1,3 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- Read Cache Busy Time
+- X3-9070: 3.6us - [[tR]]

@@ -1,6 +1,6 @@
 - ### 拿opCmd所需記憶體
 - 取出gNfcOpCmdMgr.head指向的記憶體，大小是NFC_OP_CMD_T
-	- gNfcOpCmdMgr.head改為指向next
+	- gNfcOpCmdMgr.head改為指向它自己的next
 	- gNfcOpCmdMgr.freeTagCnt--;
 	- opCmd->hwSglResIdx = INVALID_UINT16;
 	- opCmd->parent = NULL;

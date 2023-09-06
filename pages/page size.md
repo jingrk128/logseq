@@ -1,0 +1,6 @@
+- X1-9050 Package Datasheet Client rev4.0
+- X1-9050 Package Datasheet E-lite rev2.0
+	- X1-9050一個page size是16K+2K byte
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+	- X3-9070一個page size是16K+1984byte
+-

@@ -1,0 +1,5 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- Program Operation Time
+- X3-9070
+	- SLC: 81us - 300us
+	- TLC: 365us - 600us

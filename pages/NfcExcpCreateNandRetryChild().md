@@ -2,7 +2,7 @@
 - parent->option.childCnt++;
 - 申請child的cmd空間，讓cmd指向此空間 - #NFC_Cmd_Aquire()
 - cmd->opType = OP_TYPE_READ;
-- 申請child的opCmd空間，讓child指向此空間 - #NfcCom_AllocOpCmd()
+- 申請child的opCmd空間，讓child指向此空間 - #NfcSched_AllocOpCmd()
 - child->cmd = cmd;
 - child->option.subType = SUB_TYPE_NAND_RETRY;
 - 準備child的內容 - #NfcExcpBuildRepairAddress()

@@ -1,0 +1,10 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- CLE 0xEC，ALE 0x00
+- 可以抓取nand的各項詳細參數
+- 不論讀取幾次，讀到的值都不會改變
+- 使用流程為：CLE->ALE->delay tWB tR tRR->用05-E0來取得內容
+	- 如果有用read status來等待R/B pin，要先下CLE 0x00再在下05-E0，這樣才能順利輸出parameter data
+- 為求保險起見，power on後第一次執行read parameter page用timing mode 0就好
+	- 免得在不確定的狀況下用更高級但nand不支援的timing mode來讀取，可能會讀錯內容
+- 在read parameter page執行期間，不能用read status enhanced和06-E0
+- 如果是size相關的資訊，單位一律是byte

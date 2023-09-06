@@ -9,7 +9,7 @@
 	- nfcReason是NFC_RSP_CODE_OP_OK
 	- gNfcRrMode不是0
 - 條件都成立的話：
-	- 把opCmd->node推到gNfcRepairQA - #NfcExcp_Push2Repaire()
-	- 處理unc流程 - #NfcExcp_SchedUncProc() #待辦
+	- 把opCmd->node推到gNfcRepairQA[ch] - #NfcExcp_Push2Repaire()
+	- 處理unc流程 - #NfcExcp_SchedUncProc()
 	- 回傳RET_BUSY並結束
 - 回傳RET_CONTINUE並結束

@@ -1,0 +1,28 @@
+### Program和Erase
+	- nand是利用MOSFET的氧化層來保存電子
+	- program和erase會施加高電壓導致MOSFET的氧化層耗損，使得電子進出時會卡在氧化層之中
+	- 原本是絕緣體的氧化層，因為卡了越來越多帶負電的電子而開始變成帶負電
+	- 這使得在讀取時MOSFET的控制閘極要施加比平常更多的正電，才能使源極和汲極導通
+	- 也就是說，Vth因此上升了，而且隨著program和erase的次數增多，Vth會越來越高
+	- 對應的名詞是endurance和p/e cycle，指的都是nand flash的最大program/erase的次數
+- ### 電荷洩漏
+	- 當nand flash進行program，cell氧化層裡頭就會儲存電子
+	- 隨著時間的推移，氧化層裡頭的電子是會慢慢洩漏出來的
+	- 當電子越來越少，表示cell的負電也越來越低
+	- 意即當讀取時，對cell的控制閘極施加比平時更低的正電，cell的源極和汲極就會導通
+	- 也就是說，Vth下降了，時間過越久，Vth也會下降得越多
+	- 重新erase再program，Vth就會恢復
+	- 對應的名詞是data retention，表示nand flash裡頭的data可以保存多久
+- ### 讀取干擾 - read disturb
+	- [《闪存问题之READ DISTURB》总结 - 白宫飘红旗 - 博客园 (cnblogs.com)](https://www.cnblogs.com/Caden-liu8888/p/7388741.html#:~:text=%E9%97%AA%E5%AD%98%E4%BD%BF%E7%94%A8%E8%80%85%E5%A6%82%E4%BD%95%E5%AF%B9%E4%BB%98Read,Disturb%E5%91%A2%EF%BC%9F%20%E4%B8%80%E8%88%AC%E5%81%9A%E6%B3%95%E5%B0%B1%E6%98%AF%E8%AE%B0%E5%BD%95%E6%AF%8F%E4%B8%AABlock%E8%AF%BB%E7%9A%84%E6%AC%A1%E6%95%B0%EF%BC%8C%E8%B5%B6%E5%9C%A8%E8%BF%99%E4%B8%AA%E6%95%B0%E5%80%BC%E8%BE%BE%E5%88%B0%E9%98%88%E5%80%BC%EF%BC%88%E9%97%AA%E5%AD%98%E5%8E%82%E5%AE%B6%E6%8F%90%E4%BE%9B%EF%BC%89%E4%B9%8B%E5%89%8D%EF%BC%8C%E6%8A%8Ablock%E4%B8%8A%E6%89%80%E6%9C%89%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%B7%E6%96%B0%E4%B8%80%E9%81%8D%EF%BC%88%E8%AF%BB%E5%87%BA%E6%9D%A5%EF%BC%8C%E6%93%A6%E9%99%A4%EF%BC%8C%E7%84%B6%E5%90%8E%E5%9C%A8%E5%86%99%E5%9B%9E%EF%BC%89%EF%BC%8C%E6%88%96%E8%80%85%E6%8A%8A%E6%95%B0%E6%8D%AE%E6%90%AC%E5%88%B0%E5%88%AB%E7%9A%84%E5%9C%B0%E6%96%B9%E3%80%82)
+	- 讀取的時候，會對欲讀取的wordline施加電壓Vref
+	- 對在相鄰的wordline施加電壓Vpass
+		- 不知道為什麼要需這個Vpass #nand問題集
+			- bing說cell會因為種種因素使得自身的Vth下降，如果Vth下降得太多，可能會被鄰近的Vref影響導致自己被導通，然後非預期地獲得更多電子。為了避免這樣，所以需要施加Vpass，維持自己保存的電子數到一定的量，避免被過於容易的導通。
+			- [《闪存问题之READ DISTURB》总结 - 白宫飘红旗 - 博客园 (cnblogs.com)](https://www.cnblogs.com/Caden-liu8888/p/7388741.html#:~:text=%E9%97%AA%E5%AD%98%E4%BD%BF%E7%94%A8%E8%80%85%E5%A6%82%E4%BD%95%E5%AF%B9%E4%BB%98Read,Disturb%E5%91%A2%EF%BC%9F%20%E4%B8%80%E8%88%AC%E5%81%9A%E6%B3%95%E5%B0%B1%E6%98%AF%E8%AE%B0%E5%BD%95%E6%AF%8F%E4%B8%AABlock%E8%AF%BB%E7%9A%84%E6%AC%A1%E6%95%B0%EF%BC%8C%E8%B5%B6%E5%9C%A8%E8%BF%99%E4%B8%AA%E6%95%B0%E5%80%BC%E8%BE%BE%E5%88%B0%E9%98%88%E5%80%BC%EF%BC%88%E9%97%AA%E5%AD%98%E5%8E%82%E5%AE%B6%E6%8F%90%E4%BE%9B%EF%BC%89%E4%B9%8B%E5%89%8D%EF%BC%8C%E6%8A%8Ablock%E4%B8%8A%E6%89%80%E6%9C%89%E7%9A%84%E6%95%B0%E6%8D%AE%E5%88%B7%E6%96%B0%E4%B8%80%E9%81%8D%EF%BC%88%E8%AF%BB%E5%87%BA%E6%9D%A5%EF%BC%8C%E6%93%A6%E9%99%A4%EF%BC%8C%E7%84%B6%E5%90%8E%E5%9C%A8%E5%86%99%E5%9B%9E%EF%BC%89%EF%BC%8C%E6%88%96%E8%80%85%E6%8A%8A%E6%95%B0%E6%8D%AE%E6%90%AC%E5%88%B0%E5%88%AB%E7%9A%84%E5%9C%B0%E6%96%B9%E3%80%82)和電子書"深入浅出SSD"都說加Vpass是為了保證cell是導通的，但為什麼需要導通的狀態，它完全沒說明
+	- Vpass不像program需要那麼大的電壓，但還是會有week program的效果，也就是會獲得少量的電子
+	- 也就是說隨著讀取的次數增加，相鄰wordline的Vth也會隨之上升
+	- 至於被讀取的wordline的Vth會不會上升，"深入浅出SSD"和一些網路文章說不會，但我認為應該會。畢竟它本身也會被施加Vref，而且TLC還會被施加好幾次，每被施加一次理應都會獲得電子，所以Vth也會上升才對。
+- ### 寫入干擾
+- ### 高溫
+-

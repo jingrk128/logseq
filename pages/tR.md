@@ -1,0 +1,11 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- Page Read Operation Time
+- X3-9070(multi plane and single plane is the same)
+	- SLC
+		- min: 22us
+		- max: 26us
+	- TLC
+		- low page: 37-42us
+		- middle page: 45-51us
+		- upper page: 37-42us
+		-

@@ -1,0 +1,8 @@
+- ### 檢查資源是否足夠
+- 若空閒的OpCmd數量不足，就回傳false
+- opType是OP_TYPE_PROG或OP_TYPE_READ嗎？
+	- if( 0x2 == (cmd->opType & 0xe))，這樣opType 是2或3符合條件
+	- 把0x02改成OP_TYPE_PROG #改進空間
+	- 是 - 若該ce空閒的cmd fifo數量小於MAX_TEMPLATE_WRITE_DW，就回傳false
+	- 不是 - 若該ce空閒的cmd fifo數量小於MAX_CMD_LEN_DW，就回傳false
+- 回傳true

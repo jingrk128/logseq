@@ -1,0 +1,16 @@
+- 在X3-9070 Package Datasheet ClientPlus Rev1.1看到這個名詞
+- Electronic Mirroring可以減少pcb厚度以及內部層數，提高電路板的性能和可靠度
+- 以nand flash來說，Electronic Mirroring的做法就是在雙面的pcb上，在兩面相同位置上都焊上相同的nand
+	- 假設這顆nand的DQ[7:0]由左至右是DQ0-DQ7
+	- 則正面的DQ0的對面是DQ7、DQ1的對面是DQ6…以此類推
+	- 在一般情況下，這樣會讓layout較複雜
+	- 而若有Electronic Mirroring，可以讓其中一面變成鏡像
+		- 讓DQ0變DQ7、DQ1變DQ6…DQ7變DQ0
+	- 此時用LA觀察BUS，送的訊號也會變鏡像
+		- 例如送read status的cmd 0x70，會變成0xE0
+	- 這樣layout就不必花心思拉線，可以1比1直接讓兩面對接，減少pcb的層數，信號間的干擾也減少了
+- 在X3-9070只有DQ[7:0]能做Electronic Mirroring，其它pin腳無此功能
+- 在X3-9070，mirrored是在init的時候透過第一次read status(0x70)來設定的
+	- 發出0x70時，bus上的DQ[7:0]顯示0x70，表示nand把它自己設成non-mirrored mode
+	- 發出0x70時，bus上的DQ[7:0]顯示0xE0，表示nand把它自己設成mirrored mode
+- 設成mirrored mode後，直到斷電都無法更改

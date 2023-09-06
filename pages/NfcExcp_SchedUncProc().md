@@ -1,11 +1,20 @@
 - ### 處理unc
 - 以下是迴圈A，NFC最大支援幾個channel，迴圈A就做幾次：
   ch初始值是0，迴圈每重覆一次，ch就+1
-	- 如果gExcpResInUse的bit(ch)是0
-	  就設定該ch的gExcpCtrl->nfcExcpRes - #NfcExcpGetNewRepairCmd()
-	- 如果NfcExcpGetNewRepairCmd()回傳false，就跳過這次迴圈，換下一個ch
+	- 從gExcpResInUse來判斷ch是否正在處理read retry
+		- 是的話就設定該ch的gExcpCtrl->nfcExcpRes - #NfcExcpGetNewRepairCmd()
+		- 如果NfcExcpGetNewRepairCmd()回傳false，就跳過這次迴圈，換下一個ch
+		- NOW 為什麼ch一次只能處理一個read retry？ #問題集
+		  :LOGBOOK:
+		  CLOCK: [2023-07-18 Tue 10:19:25]
+		  :END:
+			- 是考慮到decode buffer一次只能給一個人用嗎？應該不是，如果是這個原因的話，那應該跟soft decode一樣，是兩個ch裡一次只能處理一個read retry
 	- 從gExcpCtrl->nfcExcpRes撈出opCmd
 	- 如果opCmd->option.childCnt不是0，就跳過這次迴圈，換下一個ch
+		- 如果有執行過[[NfcExcpGetNewRepairCmd()]]且回傳true，childCnt就一定是0
+		  所以會這個判斷是應該是多餘的，因為它不可能成立？ #問題集 #已解決
+			- 不，這個有可能成立，因為這邊的opCmd和剛剛發現decode fail的opCmd不是同一個
+			  這邊的opCmd是gExcpCtrl->nfcExcpRes[ch]->errcCmd
 	- 以下內容是迴圈B，當isContinue設true時就會一直重覆
 		- 把isContinue設false
 		- 如果opCmd->option.subState是SUB_STATE_NORMAL：

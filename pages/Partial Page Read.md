@@ -1,0 +1,18 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- 可以只讀取page內的某一部份，長度可以選擇4K或8K
+- X3-9070可以在feature addr 0xCC的P1的bit0設定長度
+	- 0是4K；1是8K
+- CLE為0x00 - 0x20
+- 流程：跟[[Page Read]]一樣，把00-30換成00-20就好
+	- dma之前是不是可以不用再下05-E0或06-E0？ #問題集
+- 從column addr來指定要從page的哪一個byte開始read
+	- 如果長度是4K，任何的column addr都可以
+	- 如果長度是8K，column addr要在chunk的第一個4K範圍內
+	- 如果Dout超過該chunk的範圍，就會讀到無效的值
+	- 如果用06-E0做dma，06-E0的column addr和00-20填一樣的就好嗎？ #問題集
+- busy的時間一樣標示為tR，這個tR應該會比一般page read的tR還短嗎？ #問題集 #已解決
+	- Johnny說tR的確會比較短，實際上短多少有機會想用LA來量
+- 當使用multi plane的時候，每個plane可以指定不同的column addr
+- Partial Page Read好像會用到cache register，但不知道實際上怎麼用 #問題集
+	- 因為datasheet說設定4K/8K是透過設定cache register來達成
+	- 也有說這個指定不能和cache read同時使用

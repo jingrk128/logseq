@@ -1,0 +1,27 @@
+- 還看不到內容的code
+	- U8 fpl_mtq_check_all_queue_ready(void);
+- XTE210_RegSpec_System.pdf 第87頁中間
+	- CONOF，C是COMS
+	- SONOF，S是schmitt trigger
+	- ONOF猜測應該是on/off的縮寫
+-
+- 沒用到的function
+	- hal_flash_set_cluster_size()
+	- hal_flash_set_trans_rule_row()
+	- hal_flash_set_trans_rule_range()
+	- hal_flash_is_bus_ready()
+	- hal_flash_set_ldpc_parity_len()
+	- hal_flash_set_ecc_capability()
+	- hal_flash_check_pkeq_ready()
+	- hal_flash_rsa_trigger()
+	- hal_flash_sha1_execute_loop()
+	- hal_flash_fce_to_vce()
+	- hal_flash_get_cor_ecc_capability()
+	-
+- 看不太懂的function
+	- hal_detect_dq_reverse()
+	-
+- 非常看不懂的function
+	- hal_dqs_update_delay_setting()
+	- hal_dqs_record_delay()
+	-

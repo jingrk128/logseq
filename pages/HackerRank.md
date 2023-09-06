@@ -1,0 +1,1 @@
+- [[Solved] Day 8: Dictionaries and Maps solution in Hackerrank - Hacerrank solution C, C++, C#, java, Js, PHP, Python in 30 days of code | Hacker Rank Online Judge Examples | DevsEnv](https://devsenv.com/example/%5Bsolved%5D-day-8:-dictionaries-and-maps-solution-in-hackerrank-hacerrank-solution-c,-c++,-c-,-java,-js,-php,-python-in-30-days-of-code)

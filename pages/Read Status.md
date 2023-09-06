@@ -1,0 +1,18 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- CLE是0x70，不需要ALE
+- 流程：CLE->tWHR->Dout
+- 在CE_n/RE_n(以較晚發生的為準)的failing edge會從DQ[7:0]output data
+- 對CE_n或RE_n做toggle，可以直接再取得一次status，不用重新執行整個流程
+- 在執行read status之前，要先做選擇lun的動作
+	- 是指用read status enhanced來選擇嗎？ #問題集
+- 如果是single plane操作，read status會回傳最後一次操作的status
+- 如果是multi plane操作，read status會回傳每個plane status用OR運算的結果
+- 如果data interface是DDR，則每筆data都會收到兩次
+- 一旦進入read status mode，command register就會維持0x70，直到其它有效的command進來為止
+	- 其它的command不是這樣嗎？ #問題集
+- 如果status的bit6(RDY)的值是0，此時除了bit7(WPN)之外的值都是無效的
+- bit1是FAILC
+	- 當使用page cache program發佈CLE 0x15/0x11時，這個bit的值才有效
+	- 如果nand不支援program cache，這個bit就沒有用了
+- bit0是PDD(power droop detection)
+	- 在POR時執行0xff的reset之前，這個bit的值是無效的

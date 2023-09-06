@@ -1,0 +1,13 @@
+- ### NfcTest_InitPB()裡，為什麼有用NFCInf_Wait_All_Req_Done()，卻還要用ctxData[]來確認？
+	- ans：ctxData有兩個用途
+	- ctxData[0]是確認執行完成的次數
+	- ctxData[1]是確認完成且成功的次數
+- ### `#define SATRT_BLOCK             (NFC_CONFIG_GET_BLOCK_PER_PLANE()/2 + 16)`
+  SATRT_BLOCK 為什麼要設成這樣？
+	- 答：沒有什麼原因，只是避免從最前面的block開始操
+- ### NfcStress_TestCase1()每一輪會執行24個read，但為什麼有時call back沒有跑24次？
+	- 答：因為遇到decode fail，會在接下來的幾輪做read retry，做完read retry才會執行它的call back
+- ### NfcStress_TestCase1()每一輪會執行24個read，為什麼有時read的call back次數+decode fail數量+上一輪read retry次數不是24
+	- 答：因為一個ch同時間內只能執行一個read retry
+	- 所以上一輪不是每個read retry都會做，每個ch只會做gNfcRepairQA[ch]裡的第一個
+	- 若call back次數+decode fail數量+上一輪read retry次數不是24，剩下不足的數量應該在gNfcRepairQA[ch]裡面

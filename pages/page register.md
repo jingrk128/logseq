@@ -1,0 +1,4 @@
+- 用於存放要讀取或寫入的data
+- 每一個plane都有一個對應的page register
+- toshiba和ymtc的data sheet裡還會出現一種名詞：data register
+	- 和page register是在講同一個東西
