@@ -1,0 +1,3 @@
+- X3-9060 Datasheet Auto 1.0
+- Address cycle to data output for training
+- X3-9060 auto: 400ns(NVDDR3 mode9-13, mode 17)

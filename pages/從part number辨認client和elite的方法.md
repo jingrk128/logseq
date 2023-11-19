@@ -1,0 +1,4 @@
+- 在YMTC datasheet中的1.4 Product List中可以看出
+- client的Product List倒數第三個英文，都是C
+- elite的Product List倒數第三個英文，都是E
+- 所以可以C或E來分辨是client或elite

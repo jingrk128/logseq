@@ -1,0 +1,10 @@
+- X3-9060 Datasheet Auto 1.0
+- controller發data，讓nand校正latch data的時機
+- X3-9060 auto在NV-DDR3支援Write DQ Training (Rx Side)，且可選擇要做或不做
+	- NV-DDR4則是不支援此功能
+- 流程：CLE 0x76->ALE lun->ALE inverse set->ALE 1st Pattern->ALE 2nd Pattern->Din->CLE 0x11            ->[[tWTRN]]
+	- inverse set和Pattern的規則都和[[Read DQ Training]]描述的一樣
+	- 不清楚datasheet的描述 #nand問題集
+		- `The input data shall be wrapped around the data pattern length 32byte until a full page data is issued.`
+			- 這個意思是說，Din的內容會一直重覆pattern的32byte，直到完整發送完一個page的長度嗎？
+	- tWTRN結束後，可以讀取[[Write Training (Rx Side) - 0x21]]的P2和P3來檢查每個DQ training完後的狀態

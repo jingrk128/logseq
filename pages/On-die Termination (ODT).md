@@ -1,0 +1,53 @@
+- 參考資料：
+	- X3-9060 Datasheet Auto 1.0
+	- onfi 5.0
+	- [ONFi 3.0: The Path to 400MT/s NAND Interface Speeds](https://www.flashmemorysummit.com/English/Collaterals/Proceedings/2010/20100818_S104_Grunzke.pdf)
+	- [400 MT/s NAND Interface Solutions](https://www.flashmemorysummit.com/English/Collaterals/Proceedings/2011/20110810_S204_Grunze.pdf)
+- 新竹eric的介紹
+	- 低速不需要ODT，高速才需要
+	- 當NAND有好幾個die，但實際上不需要那麼多個的時候，host就不會每個die都接線
+		- 但在走高速訊號(200MHz)時，這些沒接的die可能會造成訊號反射的干擾
+		- 所以會需要在線路上串終端電阻來改善訊號反射的情況。
+		- NVDDR2之前，終端電阻是做在PCB板上
+		- NVDDR3之後就都做在IC裡面，做在IC裡面的終端電阻就叫做ODT
+- skype bing的介紹：
+	- On-die Termination (ODT) 是一種在高速差分信號傳輸中使用的電路設計技術，它可以將終端電阻（用於阻抗匹配）集成在半導體芯片內部，而不是在印刷電路板（PCB）上。
+	- ODT 可以減少信號的反射和串擾，提高信號的完整性，並節約 IO 功耗。
+	- ODT 從 DDR2 SDRAM 時代開始出現，並在 DDR3 SDRAM 中廣泛應用。
+	- ODT 的阻值也可以通過寄存器設定來調整。
+- ODT只有在data cycle會enable，在command、address cycle都是disable
+	- CLE、ALE、CE high的時候，ODT都是disable
+- ODT可設定為self-termination和matrix termination
+- 只有data input/output cycle會啟用ODT，command cycle和address cycle不會啟用
+- 當用set feature在[[CTT Output Drive Strength - 0x10]]的P1[7:4] enable ODT時，就會設定為self-termination，若之後再發佈ODT Configure command後，就會切換成matrix termination
+- self-termination：只有正在執行cmd的lun會提供ODT給自己
+- matrix termination：非執行cmd的lun也會開啟ODT，需要用到volume機制以及ODT Configure command
+	- matrix termination可分為target termination和non-target termination
+		- target termination：開啟ODT的lun和執行command的lun在同一個 ((6541c95c-dc04-42a9-b81d-6be3f5e83cd8))
+		- non-target termination：開啟ODT的lun和執行command的lun在不同的nand target
+	- 當用set feature在[[CTT Output Drive Strength - 0x10]]的P1[7:4] enable ODT，然後
+	- ODT Configure command流程
+		- CLE 0xe2->ALE lun->[[tADL]]->Din[M0 M1 Rtt1 Rtt2]
+			- Din的時候，跟set feature一樣，在DDR mode時每個data要送兩次
+			- M0/M1: Lower/Upper byte of the ODT configuration matrix
+				- 例1：如果要為volume 1提供ODT，就把M0的bit1設1
+				- 例2：如果要為volume 0和volume 8提供ODT，就把M0的bit0和M1的bit0都設1
+			- Rtt1: Termination settings for DQ[7:0]/DQS Rtt & DOT
+				- [3:0] for data input
+				- [7:4] for data output
+			- Rtt2: Termination settings for RE_n Rtt & ODT
+				- [7:4]是reserve
+				- 只有[3:0]有設定效果
+			- Rtt1和Rtt2的阻值應該和[[Interface Configuration - 0x02]]的P1一樣，參考data sheet
+	- 設定成martix termiation的時候，lun會處於以下三種狀態的其中一種
+		- selected：被volume select選擇到，就會處於selected狀態
+		- sniff：當被設定提供ODT的對象被volume select選擇時，就會處於sniff狀態
+		- deselected：不是selected和sniff，就是處於deselected狀態
+	- ODT enable/disable
+		- CLE 0x1b可以關閉target和non-target ODT(feature addr要下什麼？ #nand問題集 )
+			- 流程：CLE 0x1b->[tODTOFF](6541c7e0-2614-44db-bbf9-ed3170a9f548)->CLE 0xef/0xd5->ALE feature addr->[[tADL]]->Din P1-P4
+		- CLE 0x1c則是可以再次開啟target和non-target ODT
+- 如果處於idle status，DQS_t要保持在high，避免啟用到ODT
+	- 如果ODT被設定為disable，則可以不用管DQS_t
+- #2311 #trunk #svn25943 #DL_Flashdisk_ASIC_YMTC_X1_9050_CLIENT
+	- 這邊的設定是NVDDR3，ODT enabled with Rtt of 50 Ohms

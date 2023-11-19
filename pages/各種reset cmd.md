@@ -1,5 +1,6 @@
 - YMTC X1-9050 Package Datasheet Client rev4.0.pdf
 	- FF - reset
+	  id:: 64d59dcf-98fc-46dc-bd60-01719e593c7a
 		- 上電後必要的第一個cmd，此時的reset功能為
 			- 把nand從power-up state切換為initialized state
 			- 重新load regitser

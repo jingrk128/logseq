@@ -1,0 +1,5 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- tDS
+	- Data setup time
+- tDH
+	- Data hold time

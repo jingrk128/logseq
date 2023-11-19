@@ -1,0 +1,2 @@
+- 在feature.h
+- #define NFC_STRESS_TEST_ENABLE

@@ -1,0 +1,3 @@
+- X3-9060 Datasheet Auto 1.0
+- WP_n transition to command cycle (WE_n low)
+- X3-9060 auto: 100ns(NV-DDR3/4的每個timing mode都一樣)

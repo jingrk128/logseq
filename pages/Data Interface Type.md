@@ -1,0 +1,5 @@
+- 參考資料：
+	- X3-9060 Datasheet Auto 1.0
+	- onfi 5.0
+- 當選擇NV-DDR1~4時，column的LSB一定要是0
+- 切換到DDR3之前，要先切到timing mode 0

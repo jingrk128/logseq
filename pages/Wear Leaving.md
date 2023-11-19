@@ -1,0 +1,7 @@
+- 參考資料：Alan、[耗損平均技術 - 維基百科，自由的百科全書 (wikipedia.org)](https://zh.wikipedia.org/zh-tw/%E8%80%97%E6%90%8D%E5%B9%B3%E5%9D%87%E6%8A%80%E8%A1%93)
+- 平均使用nand flash裡的每個block，避免讓特定的block過度使用而提早變bad block
+- Wear Leaving有兩種
+	- DWL - dymanic wear leaving
+		- 寫入新的data時，依特定條件(可能是erase count或其它)挑選要寫入的block
+	- SWL - static wear leaving
+		- 因為data放置過久時電荷會洩漏，所以閒置時會進行覆寫data到其它block的動作

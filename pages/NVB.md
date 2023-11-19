@@ -1,0 +1,8 @@
+- 參考資料
+	- X3-9060 Datasheet Auto 1.0
+	- X3-9060 Datasheet Industry 1.0
+- number of valid blocks
+	- 保證非壞塊的block數量
+- NVB@BOL
+	- 出廠時保證非壞塊的block數量
+	- X3-9060 Datasheet Auto 1.0在第2頁feature的表格寫NVB@**E**OL，應該是寫錯了，是BOL才對

@@ -1,0 +1,6 @@
+- X3-9060 Datasheet Auto 1.0
+- 在0xff 0xfc 0xfa reset之後，設定會被保留
+- 在0xfd之後，設定會被清為0
+- P1[0]: Vpp
+	- 設0時，external vpp disable
+	- 設1時，external vpp enable

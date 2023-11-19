@@ -1,0 +1,23 @@
+- 參考資料
+	- X3-9060 Datasheet Auto 1.0
+	- onfi 5.0
+- 在任何的data interface底下，執行data input/output的途中進入idle state，可以暫停data傳輸
+	- 只要把CE拉到hihg，就是idle state
+- 讓RE_n (RE_t/RE_c)停止動作，也可以暫停data output
+  id:: 654313f9-e05a-457d-9db3-36a35762562d
+- 讓DQS (DQS_t/DQS_c)停止動作，也可以暫停data input
+- 暫停data burst時，WE_n要保持在high
+	- data burst的定義是什麼？一般的page read/write都算是data burst嗎？ #nand問題集
+- 如果有使用warmup cycles，且在pause time時若ODT保持開啟，則當re-start data burst時不會重新再做warmup cycles
+- 如果希望當re-start data burst時關閉ODT或再次使用warmup cycles，就必須先退出data burst #nand問題集
+	- 這句不太懂意思，原文為：`The host is required to exit the data burst if it wishes to disable ODT or re-issue warmup cycles when restarting.`
+- 結束data burst的方式為：離開data burst後發佈新的command
+- data rate必須大於等於800MT/s才能暫停data input/output burst
+	- 如果小於800MT/s時data burst被中斷了，需要先退出data burst，再回復data burst #nand問題集
+		- 原文是`if the data burst is interrupted, the host is required to exit first the data burst prior to resuming it.`
+		- 看不太懂意思
+			- exit first the data burst要如何操作
+			- resuming it要如何操作
+- 如果退出data input burst且CE保持high超過1us，且後續需要回復data burst的話，需要在退出data input burst之前(參考時序圖，看起來時機是[[tWPSTH]]之後)發佈CLE 0x11；要再啟動data input burst時，需要發佈[[Change Write Column]]，這樣就可以繼續data input burst
+- 如果退出output data burst且CE保持high超過1us，且後續需要回復data burst的話，**不需要像input一樣發CLE 0x11**；而要再啟動output data burst之前，要先發佈Change Read Column(參考[[Change Read Column (Enhanced)]])
+	- 粗體字是查onfi 5.0才確定的

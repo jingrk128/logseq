@@ -1,0 +1,14 @@
+- 參考資料
+	- X3-9060 Datasheet Auto 1.0
+	- X1-9050 Package Datasheet Client rev4.0
+- ### Set Feature
+- 用來修改各個feature的設定
+- 流程：CLE 0xef->ALE (feature addr)->[[tADL]]->Dout P1...P4->[[tWB]] [[tFEAT]]
+- When issuing Set Features in the source synchronous data interface, each data byte is transmitted twice.
+	- SDRAM也是source synchronous data interface，這是不是表示若interface是SDRAM的話也一樣需要每個parameter都發送兩次？ #nand問題集
+- 如果setfeature是修改timing mode、data interface或其它，就要把[[tFEAT]]換成[[tITC]]，且不能用read status去polling R/B pin
+	- "其它"指的是哪些？ #nand問題集
+	-
+- ### LUN Set Feature
+- 和Set Feature不同的地方是，在multi lun的nand flash，LUN Set Feature只會設定指定的lun
+- 流程：CLE 0xd5->ALE lun number->ALE feature addr->[[tADL]]->Dout P1...P4->[[tWB]] [[tFEAT]]

@@ -1,0 +1,3 @@
+- X3-9060 Datasheet Auto 1.0
+- 這個feature沒有預設值，在0xff 0xfc 0xfa之後設定都會保留
+- P1[3:0]: Volume Address

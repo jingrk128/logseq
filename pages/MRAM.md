@@ -1,0 +1,8 @@
+- [磁阻式隨機存取記憶體 - 維基百科，自由的百科全書 (wikipedia.org)](https://zh.wikipedia.org/zh-tw/%E7%A3%81%E9%98%BB%E5%BC%8F%E9%9A%A8%E6%A9%9F%E5%AD%98%E5%8F%96%E8%A8%98%E6%86%B6%E9%AB%94)
+- bing的解釋：
+	- 在SSD領域中，MRAM指的是什麼？
+	- MRAM是磁阻式隨機存取記憶體的縮寫，是一種非揮發性記憶體技術，可以用來作為SSD的記憶媒體或快取。
+	- MRAM的優點是速度快、壽命長、耗電低、不怕磁場干擾等
+	- 在SSD領域中，MRAM可以用來替代DRAM或快閃記憶體，提高SSD的性能和可靠性。
+	- 例如，IBM和Everspin合作開發了一款搭載MRAM寫入快取的19TB NVMe SSD，Buffalo展示了一款使用MRAM作為快取的SSD，Nextorage披露了一款採用STT-MRAM（自旋轉移轉矩MRAM）的SSD。
+	- 這些SSD都比傳統的SSD有更低的延遲、更高的吞吐量和更長的壽命。希望這些資訊能夠幫助您了解MRAM在SSD領域中的意義和用途。

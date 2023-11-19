@@ -3,11 +3,23 @@
 		- 80-DMA: 把lower page寫入cache register
 		- 1A: 什麼都不做
 	- 2.80-DMA(middle page)-1A
-		- 80-DMA: 同時把middle page寫入cache register，把lower page寫入page register、
+		- 80-DMA: 同時把middle page寫入cache register，把lower page寫入data register
 		- 1A: 什麼都不做
 	- 3.80-DMA(upper page)-10
-		- 80-DMA: 把upper page寫到cache register、middle page寫入page register，lower page寫到cell
+		- 80-DMA:
+			- upper page寫到cache register
+			- middle page寫入data register
+			- lower page寫到cell
+				- 可能不是寫到cell，因為一個cell會同時儲存三個page的data
+				- 如果lower page先寫到cell的話，要有個前提是low page的0/1分界點剛好在中間，這樣先寫low page就不會有問題，因為只要充一次電就可以決定low page的data
+				- 但參考YMTC X3-9060 NAND Flash Application Note Automotive Rev1.2，ymtc看起來不是這樣
+				- 所以另一個合理的推論是，此時並非把low page寫到cell，而是寫到第二個data register
+					- 根據X1-9050 Datasheet Appendix VSC rev1.0，9050是有5個data register(DR)的
 		- 10:
-			- 把upper page寫到page register、把middle page寫到cell
-			- 把upper page寫到cell
+			- 把所有還在cache和data 的data都推到cell
+				- 把upper page寫到data register、把middle page寫到cell
+				- 把upper page寫到cell
 	- ps.1A之後有個tPCBSY，原先以為這段期間也會做推到下一級的動作，但Jason說不是，應該只是處理內部前級buffer的動作
+- read的時候，00-30應該就會一口氣從cell拉到cache register
+	- 因為agate-s做cache read/write時，只先用80，再用05-E0就完成了
+	- 表示05-E0是從cache register拉data的

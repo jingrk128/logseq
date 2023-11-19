@@ -1,0 +1,11 @@
+- X3-9060 Datasheet Auto 1.0
+- Timing Mode有以下欄位
+- ### Timing Mode Number
+- ### PC
+  id:: 652fb1e8-a6e6-435f-96ad-a4014bd8a173
+	- Program Clear，控制program page register clear enhancement
+	- 設0時，在發佈CLE 0x80後，每個lun的page register的內容都會被清空
+	- 設1時，在發佈CLE 0x80後，只有該lun和被program選擇的interleave addr的page register會被清空
+		- 什麼是interleave addr？ #nand問題集(已解決)
+			- ans: 就是同時執行cmd的lun，"program選擇的interleave addr"就是其它program時被row addr選擇到的lun
+		-

@@ -1,0 +1,5 @@
+- postamble hold是controller在postamble後還會維持一段low的時間
+- postamble hold的功能，三個ai的結論都說是為了穩定
+	- bing說是為什讓DQS保持三態的時間，確保線路上沒有殘留的電荷，避免干擾下一個信號
+	- bard說是為了防止postamble結束了出現信號抖動、降低data的誤差
+	- chatgpt是說為了確保信號穩定

@@ -1,0 +1,8 @@
+- BLRD - Block Read Disturb
+	- 從第一個到最後一個block循序讀取，可以保證循環幾次都不會讀錯
+- SPRD - single Page Read Disturb
+	- 重覆在一個block內隨機讀取一個page，可以保證重覆幾次都不會讀錯
+- EOL - End of Life
+	- 在p/e cycle達到上限後的情況下進行測試
+- BOL - Beginning of Life
+	- 在p/e cycle為0的情況下進行測試

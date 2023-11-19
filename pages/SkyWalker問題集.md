@@ -1,3 +1,244 @@
+- XTE210_FIP_Specification_V1.1.pdf
+	- 第9頁
+		- 上方 FCTL_IO_SET[20] F_IO指的是什麼？
+		- 什麼時候會用到FCTL_BUF_VALID？
+		- signoff flag是什麼？
+		- FCTL_MT_TRIG[31] 這邊說的abort，指的是中止什麼東西？
+	- 第12頁
+		- FCTL_DMA_CFG[31] enable buffer rotation是指把buffer當成ring buffer嗎？
+		- FCTL_DMA_CFG[30] query可以查詢什麼？
+		- FCTL_DMA_CFG[29] zero-E3D是什麼？
+		- FCTL_DMA_CFG[28] DQS input mode和GPO input mode是什麼？
+		- FCTL_DMA_CFG[27] 什麼時候會需要single dummy DQS？
+		- FCTL_DMA_CFG[26] DQS dummy data status是什麼？
+		- FCTL_DMA_CFG[24] binary operation是什麼？
+	- 第13頁
+		- FCTL_DMA_CFG[22] 這個功能是會自動計算YMTC 9050 pMLC的middle page嗎？
+		- FCTL_DMA_CFG[20] 當設為1，data和non-data分別會在哪個address？
+		- FCTL_DMA_CFG[3] force to 0 inside the HW是什麼意思？應該不是指FW不能改值吧？
+	- 第14頁
+		- FCTL_OTHER_SET[14] 功能是否如下：
+		  這個bit設1時，就可以Update FCTL_DBG_CFG_0 by MTQ parameter
+		  設0時，就無法Update FCTL_DBG_CFG_0 by MTQ parameter
+		- FCTL_OTHER_SET[12] 2xnm D2和3xnm D3/ED3是什麼東西？
+	- 第15頁
+		- FCTL_FSA_SEL[30]iFSA2和iFSA是什麼？
+	- 第16頁
+		- FCTL_ECC_INFO[17] miscorrect for f/w polling是什麼意思？
+		- FCTL_ECC_INFO[16] uncorrectable for f/w polling是什麼意思？
+		  miscorrect和uncorrectable 有何不同？
+		- FCTL_ECC_INFO[15] 這邊的threshold指的是哪一個threshold？
+	- 第17頁
+		- 什麼時候會用到FCTL_SPR_ADR？
+	- 第18頁
+		- FCTL_INT_INF_0[31] 什麼是interrupt busy？
+		- FCTL_INT_INF_0[21] UNF_FIF_RD_PTR為1或為0時各代表什麼意思？
+		- FCTL_INT_INF_0[18] FIF是什麼意思？TRAPPING flag是什麼？
+		- FCTL_INT_INF_1 uncor occur count和over error threshold count被記錄在哪裡？
+	- 第19頁
+		- **上方 FCTL_RBY_INF[8]  FLH_CE_RBY AND single是什麼意思？**
+			- **依照hal_flash.h第827行名字取為CHK_ALL_READY來看，這個bit的意思是把所有CE的RBY都AND起來的值，所以只要有一個CE是BUSY，這個bit就會為0**
+		- FCTL_EXTRA_CMD 這個reg的用法是否如下：
+		  當dma還沒結束時可以預先在這裡填入欲執行的cmd
+		  等dma結束後就會馬上執行cmd
+		- FCTL_HS_MODE[31:16] external CE是什麼？
+	- 第20頁
+		- FCTL_HS_MODE[3:2] DQSB valid和DQSB enable是不同的意思嗎？
+		- FCTL_HS_MODE[1] 這邊的意思是說當pio_dqs_oe為1時，DQS就會output嗎？
+		- FCTL_INT_CFG[8] external INT_QUEUE是什麼？
+	- 第21頁
+		- FCTL_POL_SEQ_1[15:0] ready 1 status是什麼？
+		- FCTL_SEED_IDX_BASE[6:0] 9'b0應該打錯了，是7b'0才對
+	- 第22頁
+		- FCTL_BUF_VLD_RANGE 這一整個register都不知道怎麼用
+		- FCTL_BUF_VLD_RANGE[14] 描述的最後寫FCTL_BUF_VLD_RANGE[12:8]，但該欄位的範圍是[13:8]，應該有一邊打錯了
+		- FCTL_FARG_ROW和FCTL_FTA_ROW都是儲存row address，這兩個有什麼不同
+		  FCTL_FARG_COL和FCTL_FTA_COL也是同理
+	- 第23頁
+		- FCTL_CHNL_SET[12] spare conversion是什麼？
+		- FCTL_CHNL_SET[9] 什麼時候會需要inversion？
+		- FCTL_CHNL_SET[2:0] 每一種flash mode有何不同？該如何選擇適當的mode？
+	- 第24頁
+		- 什麼情況下會需要用到FCTL_DQS_CNT和FCTL_RE_cnt？
+		  為什麼其它像WE或ALE那些pin就不需要CNT？
+		- FCTL_FPU_TRIG[31] 什麼是CE syne和CE update？
+		- FCTL_FPU_TRIG[2] 為什麼名字要叫做SRQ_AVL？
+	- 第25頁
+		- FCTL_SEED_MODE[30:29] 如何選擇適當的algorithm？
+		- FCTL_SEED_MODE[28:24] ODT_EN指的是什麼？是某一根pin腳嗎？
+		- FCTL_SEED_MODE[20] ODT control pin在哪裡？
+		- FCTL_SEED_MODE[13:11] 這邊說的delay cycle是指tWPSTH之外的delay嗎？
+		  FCTL_SEED_MODE[10:8]  問題同上
+	- 第26頁
+		- FCTL_CUR_UNC_MAP和FCTL_INT_INF_1有何不同？
+	- 第27頁
+		- FCTL_CUR_MISCOR_MAP和FCTL_INT_INF5有何不同？
+		- FCTL_SB_CTRL[19] APP_MEM是什麼？
+		- FCTL_SB_CTRL[6] 該如何判斷要選擇XOR還是XNOR？
+	- 第28頁
+		- 何時會用到FCTL_MT_PTR_DIF？該怎麼使用？
+		- FCTL_DBG_INF 什麼是debug port？
+	- 第30頁
+		- 下方 FCTL_MT_STOP_INF[1]的用途是什麼
+		- FCTL_PFA_CFG，PFA是什麼意思？
+		- FCTL_PFA_CFG[12] poll fail是指把什麼poll fail？
+	- 第31頁
+		- FCTL_MTQ_CFG[23:16]和FCTL_MT_TRIG[23:16]有何不同？
+		- FCTL_MTQ_CFG[15:8] MTQ suspend register在哪裡？什麼時候需要mask它？
+		- FCTL_MTQ_CFG[7:0] 什麼時候需要suspend MTQ？
+		- FCTL_ECC_INFO_2[28] trapping for f/w polling是什麼意思？
+		- FCTL_ECC_INFO_2[27:16] minimum initial syndrome sum of FHB DMA read是什麼？
+		  PTYCHKSUM的PTY是什麼意思？
+		- FCTL_ECC_INFO_2[7:0] 什麼是2-level FIFO？
+	- 第32頁
+		- FCTL_INT_INF_7[11:0]和FCTL_ECC_INFO_2[27:16]有何不同？
+	- 第33頁
+		- FCTL_INT_INF_6[13:0] 這邊是記錄的是每一次read的error bit嗎？
+		- FCTL_ERASE_PAG[31] 當正在執行erase，這個bit就會變1嗎？
+		- FCTL_ERASE_PAG[30] 這個功能是enable erase之後，去計算沒有被設為1的bit數有多少嗎？
+		- FCTL_ERASE_PAG[29] 為什麼erase需要ecc？
+		- FCTL_ERASE_PAG[14:0] 0的數量大於threshold就不會執行erase了嗎？為什麼要這麼做？
+		- FCTL_ERASE_PAG_INF[30:16] 這個是指erase一個block時，它會挑出這個block裡0的數量最少的frame嗎？
+	- 第38頁
+		- FCON_INFO[7:0] 只有note2，沒有note1
+		- FCON_MODE_SET[31] handshake mode和counter mode背後的機制是什麼？
+	- 第39頁
+		- FCON_RGD_CTL[2] BRAM是什麼？
+		- FCON_RGD_CTL_1[13] RGD bad column DMA enhance是什麼意思？
+		- FCON_RGD_CTL_1[3:0] bad column register是什麼？
+	- 第40頁
+		- FCON_FORMAT[9:0] chapter 14在哪裡？
+		- FON_FLH_FUNC[31:28] delay是以ns為單位嗎？
+		- FON_FLH_FUNC[20] spare write會寫入哪些data到IRAM？
+	- 第41頁
+		- FON_FLH_FUNC[19]  write dma後有沒有deassert DQS_OE會有什麼區別嗎？
+		- FON_FLH_FUNC[16] 如果選擇dual buffer，那第二個buffer的start和len在哪設定？
+		- FON_FLH_FUNC[14] boot code是什麼？
+		- FON_FLH_FUNC[8] 要push到哪裡 or push給誰？
+	- 第42頁
+		- unc=1或0是由誰決定？
+		- case1的表格
+			- 為什麼FCON_FLH_FUNC[21]是0，但STR write to IRAM卻是1？
+		- case2的表格
+			- any_buf_vld為1，且unc為0時
+				- 為什麼report UNC to FW是0？這樣FCON_FLH_FUNC[20]不是形同虛設了嗎？
+				- 為什麼STR write to IRAM是1？
+		- case3、case4的表格
+			- 為什麼any_buf_vld為0，且unc為1時的report UNC to FW是0
+	- 第43頁
+		- FCON_GEN_CONV_IDX1[31:20] 要如何設定適當的值？
+		- FCON_M2I_CTL[31] inverted data是指把read/write data的0/1都反相嗎？
+		- FCON_SGN_MSK[15:8] 為什麼8byte是8'd0~8d'60，而不是8'd0~8d'64
+	- 第44頁
+		- FCON_RTY_CFG[26:24] phase count的單位是什麼？
+		- FCON_RTY_CFG[12:8] FPU retry是什麼意思？
+		- FCON_SPECIAL[8] internal rby status是什麼？
+		  設0時，auto send read status，這個auto是指下任何一個cmd後就會自動執行嗎？
+		- FCON_SPECIAL[7:0] 設定這個wait counter會影響到什麼？
+	- 第45頁
+		- FCON_CE_CLR_VALUE[31:0] CE disable value是什麼？
+		- FCON_TGL_TIME_CFG[31:28] CLH是什麼？
+		  id:: 651404ca-9881-44ad-a70b-1e3e820488cd
+		- FCON_TGL_TIME_CFG[23:20]以及[19:16]、[11:8]、[3:0] 這些地方的phase count都是[3:0]對嗎？
+		- FCON_TGL_TIME_CFG[14:12]以及[6:4]的PST phase count都是[2:0]對嗎？
+	- 第46頁
+		- FCON_ONF_TIME_CFG[30:28]和[26:24]的WEN phase count都是[2:0]對嗎？
+		- FCON_ONF_TIME_CFG[18:16] RTN指的是什麼？
+		- FCON_ONF_TIME_CFG[11:8] register value指的是哪一個register？
+	- 第48頁
+		- FCON_FW_RESET[9] S2B是什麼意思？
+		- FCON_FW_RESET[6:1] 這邊的low/high cycle等於統計FCON_FW_RESET[0]設0的次數嗎？
+		- FCON_ADR_GEN[28:24] Frame ptr catch mask是什麼意思？
+		- FCON_ADR_GEN[23] Addr gen tlc mode是什麼？
+		  下方公式的tlc_ptr是什麼？
+		- FCON_ADR_GEN[11] 設0時，fsa會等於誰的[63:0]？
+	- 第49頁
+		- FCON_ADR_GEN[21:16] catch tlc_ptr是什麼意思？
+		- FCON_ADR_GEN[12] 這邊寫會用78h的cmd來做auto poll，是在什麼時機點會自動執行78h呢？
+		- FCON_ADR_GEN[5:0] Frame prt catch是什麼意思？
+		- FCON_ADR_GEN_STOP[2:0] 這邊的N指的是什麼？
+		- 已經有了FCON_FCE_ENB，為什麼還需要FCON_FCE_SET？
+	- 第50頁
+		- FCON_INT_NUM[7:0] ID是什麼的ID？
+		- FCON_INT_MASK[7:1] Interrupt queue non-executed number是什麼？
+		- FCON_INT_MASK[0] 設0或1會有什麼影響嗎？
+	- 第51頁
+		- FCON_INT_FULL和FCON_INT_EMPTY是什麼意思？
+		- FCON_GEN_CONV_IDX4[25:16]要怎麼設定正確的值？
+		- FCON_GEN_CONV_IDX4[14:12]是依nand一個block有多少page來選擇嗎？
+		- FCON_GEN_CONV_IDX4[11:0]要怎麼設定正確的值？
+	- 第52頁
+		- FCON_MT_CFG[15] 什麼是reuse mt？
+		  First trigger不是high priority的意思嗎？
+		- FCON_MT_CFG[11] Last priority不是low priority的意思嗎？
+		- FCON_MT_CFG[10:8] 設定MT Queue index會有什麼影響？
+		- FCON_MT_CFG[7:0] TABLE_SIZE是指FCON_MT_ADR_BASE[21:18]這個table嗎？
+	- 第53頁
+		- 為什麼case 1 both high priority的時候，A1做完會接著做E0？E為什麼會插在BCD前面？
+	- 第55頁
+		- FCON_MT_ADR_BASE[21:18] MT table size要如何設定適當的值？
+		- FCON_PERR_CFG[10] RGD是什麼？
+	- 第57頁
+		- FCON_FRM_DMY_CFG[7:0] FRM_DMY_LEN_VAL有什麼功能？
+		- FCON_FPU_DIE_CFG_L和FCON_FPU_DIE_CFG_H要怎麼使用？
+	- 第58頁
+		- FCON_FTA_MSK[31:0] "Die interleave auto poll 2. Program/Erase Suspend"是什麼意思？跟這個register有關係嗎？
+		- FCON_LDPC_FHB_CFG_0[20] BF_PARAM0的"BF"是什麼意思？FHB是什麼意思？
+	- 第60頁
+		- FCON_LDPC_CFG_0
+			- MAX_ITE是Max Iterator的意思嗎？
+			- FLIP_MODE、GDBF、NHB是什麼？
+	- 第61頁
+		- FCON_FPU_DIE_CFG_1[19:17] 該如何設定適當的LDPC APP RAM bank？
+		- FCON_FPU_DIE_CFG_1[16] fast hard bit是什麼？
+		- FCON_FPU_DIE_CFG_1[7:0] MSA是什麼意思？
+	- 第63頁
+		- FCON_EXP_UNC_FRM[17] 是不是這個bit要設1，這個register的功能才會有作用？
+		- FCON_EXP_UNC_FRM[16] Uncorrectable frame internal counter有什麼作用？什麼時候會不為0？
+		- FCON_E3D_BASE[31:0] 公式中，為什麼FCTL_DMA_ADR_0[15:0]要乘以2？
+	- 第61-68頁
+		- FCON_LLR_TABLE為什麼有4個？要如何決定要用這4個的哪一個？
+	- 第70頁
+		- DLL_DLL_CTL[16:8] MDLL tracking是什麼？
+		  before average是指會做average這件事嗎？什麼時候會做？如何做？
+		- DLL_DLL_CTL[5] MDLL tracking delay是什麼？
+		  最後一行的L16是什麼？
+		- DLL_DLL_CTL[2] MDLL_RSTJ中最後的"J"是什麼意思？
+	- 第71頁
+		- DLL_LOAD_CTL[28] trigger mode是什麼？
+		- DLL_LOAD_CTL[24] 因為period mode not used anymore的關係，這個bit是否也無效了？
+		- DLL_LOAD_CTL[23:16] 設1時就是update dly value once，但同時也是load ch0，這兩個會衝突嗎？
+	- 第73頁
+		- DLL_W_TRACK_CTL[14:0] T/4 of DQS的"T"是什麼？
+		  SDLL_W delay因為公式裡有*2^-9，所以算出來不會是整數，那麼最後一行SDLL_W delay[8:0]要怎麼取值？
+		- DLL_GCK_DLY[13:12] R_SEL指的是什麼？
+	- 第89頁
+		- NOP指令(0x00)
+			- 什麼時候會用到NOP指令？
+		- CMD指令(0x02)
+			- CMD的DQS_OE是否在write時要設1，read時要設0？
+			- 什麼時候需要設定DQS_H？
+			- 什麼時候會需要把DIE設為1？
+		- ADR指令(0x03)
+			- 當send column和row addr時，addr是依據FCTL_FTA_COL和FCTL_FTA_ROW嗎？
+			- 範例中的cmd(60)是指用CMD指令在DAT的欄位0x60嗎？
+			- 範例中的adr(1, 5)是什麼意思？
+	- 第90頁
+		- DAT指令(0x04)
+			- 上方INT = (read data & MASK) != DAT_L，INT指的是什麼？
+			- Please notice that the extended 32 bits code cannot across 8-byte boundary in SRAM. If cross two 8-byte boundary, please use NOP to 8-byte alignment
+			  這一段不懂意思
+			- 中間範例
+				- 這個範例的前提，是否已在0x4E00之前已對nand下過read status的指令？
+				- 0x4240，其中的high byte 0x42是否就是not used？改成0x00也無所謂？
+		- DMA指令(0x06)
+			- read/write的dma addr都是FCTL_DMA_ADR_0嗎？
+			- dma的長度在哪裡設定？
+	- 第91頁
+		- RTY_DAT指令(0x9)
+			- 圖片中的rty_wp和rty_wh是什麼意思？
+- hal_flash.h
+	- 第369行 spec上寫frame ptr cache長度是6bit，故CHK_FRM_PTR_MASK定義為0x1F是否錯誤，應為0x3F才正確？
 - XTE210_FIP_Specification_V1.0.pdf第15頁上方
 	- 當FIX2FLH_EN=0，且FCTL_BUF_VALID不是1也不是0的話，FCTL_OTHER_SET的fixed value是哪一種配置？
 - XTE210_FIP_Specification_V1.0.pdf 第23頁
@@ -36,21 +277,80 @@
 - XTE210_RegSpec_System.pdf 第82、83頁
 	- FAD指的是什麼？
 -
-- XTE210_FIP_Specification_V1.0.pdf 第45頁
-	- FCON_DQ_BIT_REV的說明第三點，`IF the Flash CE0~15 is enabled more than one at the same time, the DQ bit reverse function will refer to least of enabled Flash CE.`，即使搭配此項說明下的範例，還是不懂它的意思
-- XTE210_RegSpec_SEC.pdf 第39頁上方
-	- ATARTDATA應該是打錯了，是STARTDATA才對
+- XTE210_FIP_Specification_V1.0.pdf
+	- 81頁
+		- 上方 AGR是Address Generation Rule的縮寫嗎？
+		- 上方 ALU是什麼的縮寫？
+	- 82頁
+		- 有兩個內容一樣的Figure2
+	- 83頁
+		- 上方 Frame_ptr FSA[0x3c[5:0]+3 : 0x3c[5:0]] & 0x3c[15:12]
+			- 這邊出現共3次的0x3c，單純就是常數的0x3c嗎？為什麼要這樣用這樣的方法表示？
+			- 如果就是常數，算出來就是FSA[63:60] & 0，因為最後有"& 0"，那結果不就一定會是0了嗎？
+		- FCON_ADR_GEN_STOP [15] is enable bit, when enable, **FCON_ADR_GEN[13:8] indicate bit location in FSA, when this bit value same as FCON_ADR_GEN_STOP[14]**, it will execture 8 ALU, if not, it will execture 11+1 ALU(n FCON ADR GEN STOPP[2:0]).
+			- FCON_ADR_GEN[13:8]是否寫錯？[13:8]應該是[13:13]才對？
+			- FCON_ADR_GEN_STOP[14]在第49頁被劃刪除線，是否定義有被更改？
+	- 88頁
+		- FPU是Flash Process Unit的縮寫嗎？
+		- 下方 DAT(0x04)的bit[15:8]是NU，NU是什麼意思？
+	- 109頁
+		- FCON_PERR_CFG[14:12]
+			- 1.這裡提到的DSP是什麼意思？
+			- 2.為什麼和第55頁描述的不一樣(55頁的[14:12]都是reserved)
+	-
+	- 以下是後面文章內有被提及的register，但這些register卻沒有在前面Register Definition的部份被介紹到
+		- 81頁 FCTL_TARGET_ROW_ADR、FCTL_TARGET_COL_ADR、FCTL_DMA_CONFIG
+		- 82頁 FCTL_OTHER_SETTING
+			- 有一個名字類似的FCTL_OTHER_SET，但是[29:27]是reserved，而文章內要我們參考[30:27]
+		- 96頁 下方 DLL_W_TRACK_RATIO
+-
+- 以下的部份，看起來單純是key錯字了
+	- XTE210_FIP_Specification_V1.0.pdf
+		- 102頁 下方 Flas IP，應該是Flas**h** IP才對，少打一個"h"
+		- 83頁 中間 generatewill應該是generate will才對，中間少了空格
+		- 82頁 上方 FCON_ADR_GEN_STOP[2:0]後面應是句號，不是分號
+	- XTE210_RegSpec_SEC.pdf
+		- 第39頁 上方**A**TARTDATA應該是**S**TARTDATA才對
+-
 - hal_flash.c 第376到379行
 	- `rdw_PKE_CTRL[PKE_STA] & CHK_CMDQ_FULL`應該要回傳TRUE才對
 -
+- 已解答
+- 92頁
+	- **下方 CE0的Event_2和Event_3的間隔是controller在做別的事嗎？還是單純在閒置？**
+		- **ans:因為此時CE1在做DMA**
+- 102頁
+	- **中間 interrupt vector所有bit的定義為何？**
+		- **ans: 在FCON_INT_NUM**
 -
 - 以下還沒問的：
-- XTE210_FIP_Specification_V1.0.pdf第51頁中間
-	- FCON_GEN_CONV_IDX4[14:12]是依nand一個block有多少page來選擇嗎？
+- XTE210_RegSpec_System.pdf
+	- 第16頁
+		- FLH_IRAM的結束位址是0XF8FE-3**3**FF，但是在XTE210_memory_decode.pdf第1頁中卻寫0XF8FE_3**7**FF
+	- 第122-167頁
+		- 當LDPC parity check error時，有好幾種ram可做check的用途
+		  種類如下：
+		  IN0
+		  IN1
+		  OUT0
+		  OUT1
+		  BFCNT
+		  MIN
+		  SIGN
+		  APP
+		  V2C
+		  FLIP
+		  以上每一種ram又有區分ERROR_ADDR和ERROR_RAM2IP
+		  請問何時會用到它們？以及該如何使用？
+- XTE210_memory_decode.pdf
+	- 第2頁
+		- DBUF、ATCM、BTCM、IRAM、TPRAM，這幾個有何不同？
+-
 - XTE210_RegSpec_System.pdf 第87頁中間
 	- 關於CONOF和SONOF，是不是CONOF要enable，SONOF才能enable？
 - XTE210_FIP_Specification_V1.0.pdf第7頁中間
 	- 什麼是OR/AND result
+		- ans：應該是指FON_FLH_FUNC[13]
 - hal_flash_init()
 	- ```
 	  #if ENABLE_FAKE_FF_RETRY
@@ -81,3 +381,61 @@
 - FCTL_CHNL_SET裡DUMMY_DATA的長度如何判斷要設多少？
 - FCTL_OTHER_SET裡fixed value是做什麼用的？
 - sign-off是什麼意思？Sign-off the frames是什麼意思？
+-
+- 先別問
+	- 第45頁
+		- FCON_DQ_BIT_REV的說明第三點，`IF the Flash CE0~15 is enabled more than one at the same time, the DQ bit reverse function will refer to least of enabled Flash CE.`，即使搭配此項說明下的範例，還是不懂FCON_DQ_BIT_REV和FCON_FCE_ENB是怎麼決定DQ的順序是[7:0]還是[0:7]
+			- 暫：controller只有1個channel，所以不會用到這個功能，可以不用深究
+	- 81頁
+		- 下方紅字 use adr_gen phase of FPU (no register directly trigger, if need to adr_gen, need **create adr_gen phase in FPU sequence**)
+		  "create adr_gen phase in FPU sequence"，這個動作要如何執行？
+			- 暫：這邊等知道FSA更多資訊後再討論
+	- 83頁
+		- column address of frame 3是什麼意思？
+			- 暫：這邊等知道FSA更多資訊後再討論
+	- 89頁 暫：這邊等Johnny看過後再討論
+		- 上方 Last/First分別代表這次是最後一次/第一次的read/write？
+		- 上方 當Ext bit為1時，DAT(0x04)就會切到read且W/R bit就無效了嗎？
+		- 中間
+			- 只要下0x4E00，就代表是read status的sequence嗎？
+			- 0x4240的bit0沒有舉起來，為什麼卻可以check program fail bits？
+			- INT_VCT是什麼？
+		- 下方 POL(0x05) 當STATUS為1是polling status，指的是read status裡的bit6嗎？
+	- 90頁 暫：這邊等Johnny看過後再討論
+		- 上方 CLE terminate phase指的是什麼？
+		- 上方 DQS drive value指的是什麼？
+		- RTY_DAT(0x9)是用於同一個cmd要發不同data嗎？
+		- GPO_CTL(0xE)當要更改某個項目的value，是不是也要把該項目的change enable設1？
+	- 92頁
+		- 下方 good performance比bad好的地方，是兩個CE第三次busy時間錯開了嗎？
+			- 效能的問題，可以放在之後再來處理
+	- 96頁
+		- MDLL和SDLL的關係是如下描述嗎？
+			- MDLL是原始的CLK
+			- MDLL經過delay處理後，就是SDLL
+				- 暫：可能跟madj和sadj的關係一樣，因為開頭都是M和S
+		- SDLL和MDLL的S和M是什麼的縮寫？
+			- 暫：可以先問Jacky MADJ和SADJ的M和S是什麼的縮寫
+	- 97頁
+		- 上方 FLH_STROBE_MODE是什麼意思？
+			- 暫：可能是rising edge/falling edge取值的設定
+	- 102頁
+		- 最後一行 FPU什麼時候會trigger
+	- 104頁
+		- 中間 dircet soft bit和V+、V-是什麼？
+			- 暫：V+可能是加一個step電壓後的讀值
+			  V- 減一個step電壓後的讀值
+			  soft bit：不加也不減電壓後的讀值
+	- 106頁
+		- 上方 Panial read frame 3, FCTL_RAW_DMA = frame len * 3
+		  frame len是哪來的數值？
+			- 暫：可能是frame的長度
+	- 109頁
+		- MT table是什麼？
+	- 112頁
+		- semaphore指的是最多可以有幾個核心可以同時存取的計數器？
+			- 暫：
+		- SNAP Read就是partial read嗎？
+			- 暫：對
+		- 中間和下方的圖，依照106頁的表格說明，dummy不是應該包在frame裡面嗎？為什麼112頁的frame的後面又有dummy？
+			- 暫：

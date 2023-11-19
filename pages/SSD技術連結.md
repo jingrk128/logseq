@@ -1,0 +1,3 @@
+- [技术文章 (memblaze.com)](https://memblaze.com/innovate/technical-articles?type=&year=&keywords=&pagenum=1)
+- [NAND Flash 101: An Introduction to NAND Flash and How to Design it into Your Next Product (micron.com)](https://media-www.micron.com/-/media/client/global/documents/products/technical-note/nand-flash/tn2919_nand_101.pdf?rev=3774f4d24cec419382e02941b460e286)
+-

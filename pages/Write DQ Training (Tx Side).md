@@ -1,0 +1,14 @@
+- X3-9060 Datasheet Auto 1.0
+- 讓controller對齊DQ和DQS的rising/falling的訊號
+- 當NAND的速度超過800MT/s時，就應該要執行此Training
+- 流程：CLE 0x63->ALE lun->[[tADL]]->Din->[tWPST](651a905f-72a8-4e7f-a071-8f7e21d69e61)->CLE 0x64->ALE lun->[[tWHRT]]->Dout
+	- Din的數量要符合[[Write Training (Tx Side) - 0x20]]的[P3[3:0]](653255da-c952-421f-adb9-748d4fe25ea3)
+		- 若不符合，Dout就會是未定義的值
+	- 不清楚datasheet的描述 #nand問題集
+		- ` results shall be compared with the “expected” data to see if further training (DQ delay) is needed.`
+			- `“expected” data`不知是否就是Din
+				- line社群的大大回答是
+			- `further training (DQ delay)`這個不知道是什麼
+				- 一開始覺得有可能是[[Write DQ Training (Rx Side)]]，但line社群大大說不是，就是單純的DQ delay，用controller的reg去微調
+					- 2312和ps8229似乎都沒有這個reg
+			-

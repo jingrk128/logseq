@@ -1,0 +1,4 @@
+- X3-9060 Datasheet Auto 1.0
+- CE_n HIGH hold time
+- X3-9060 auto: 20ns
+	- DDR3和DDR4的每個timing mode都一樣

@@ -1,1 +1,2 @@
-- OCD (Off-Chip Driver) Topology是一種用於高速差分信號傳輸的電路設計，它可以在芯片外部提供一個驅動器，以將信號放大和匹配到傳輸線的特性阻抗。OCD可以使用不同的邏輯技術，如CML (Current Mode Logic)或SSTL (Stub Series Terminated Logic)。OCD的一個重要功能是可以校準其輸出阻抗，以減少信號反射和串擾。這種校準可以由外部設備執行，也可以由芯片內部的電路自動執行。OCD Topology在DDR2和DDR3 SDRAM中有廣泛的應用
+- OCD (Off-Chip Driver) Topology是一種用於NAND Flash介面的信號驅動方式，它可以提高信號的傳送速率和品質。
+- 原理是在NAND Flash晶片和控制器之間，使用一組外部的驅動器和接收器，來增強信號的驅動能力和接收靈敏度。

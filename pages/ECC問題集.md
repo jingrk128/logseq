@@ -1,0 +1,44 @@
+- 錯誤更正碼
+	- XOR運算(加法)和AND運算(乘法)都是modulo 2的其中一種算法嗎？
+	- m ∈ $\cal{B}$$^k$是什麼意思？
+	- 第5頁，為什麼說有16個解？把收到的codeword拿去和H矩陣相乘，不是只會得到一個解而已嗎？
+	- 第6頁，x 和x′的Hamming distance 事實上只是x + x′的Hamming weight，為什麼？
+		- ans: 因為兩個 codewords 的Hamming distance 會 等於相加後的Hamming weight
+	- 第七頁，什麼是二位元向量(binary distance)？
+- 蛋蛋
+	- 9.3.3的故事和後文解講有啥關係？
+	-
+- ### 後續再處理
+	- 錯誤更正碼.pdf
+		- 它的 dimension 就等於7減掉這個矩陣的 rank 3, 也就是4, 所以C集合裡面就有$2^4$ = 16個 codewords。
+			- 什麼是rank3？
+				- ans: 學線性代數就知道
+		- 它的 dimension 就等於7減掉這個矩陣的 rank 3, 也就是4, 所以C集合裡面就有$2^4$ = 16個 codewords。
+			- 什麼是rank3？
+				- ans: 學線性代數就知道
+		- 我們從一個 codeword 除了 全部是0之外, 它的1的個數最少有幾個來考慮。 有沒有可能是1? 不可能, 因為如果有一 個 codeword 的weight 是1, 那H乘上去之 後會得到某一個 cloumn, 絕不會是0, 所以 這個codeword 就不會在 null space 裡面, 因此不可能是1。
+			- 2也是不可能的, 因為一個 weight 是2的codeword 與H相乘後, 會變 成H中兩個不同的column 相加, 但是H中 的每一個 column 都不一樣, 所以相加之後 不可能是0, 所以這樣的codeword 也不在 null space 裡面。
+			- 那可不可能是3? 答案是對的
+	- 蛋蛋
+		- 什麼是線性獨立的校驗方程？
+			- ans: 學線性代數就知道
+		-
+- ### 已解決
+	- 錯誤更正碼.pdf
+		- x是row vector，row vector是矩陣裡的任何一行？
+			- ans: yes
+		- "整個C就是矩陣H的null space" 是什麼意思？
+			- ans: 意思就是假設$\vec{x}$ ∈ C，則C裡面每個$\vec{x}$都能符合H$\vec{x}^T$ = <u> 0 </u>
+		- 為什麼dimension 是4的時候，集合裡就有$2^4$ = 16個 codewords？
+		  它說16個codewords我覺得很怪，因為像(7, 4)漢明碼，1235、1246、1347不是固定的三組嗎？這樣子不就只有3個codewords而已？
+			- ans: 它的意思是因為欲傳送的data有4bit，所以有16種組合，這16種的任一種都可以用H矩陣進行decode
+	- 蛋蛋
+		- k=(n-r)個有效信息 是什麼意思？
+			- ans: 有效信息指的是欲傳送的data，以(7, 4)漢明碼來說，k就是4，n是7，r是3
+		- r個校驗bit 是什麼意思？
+			- ans: 就是encode時，會加在data後面的bit數，以(7, 4)漢明碼為例，有校驗碼有3bit，所以r就是3
+		-
+		- H &<u>ｘ</u>^T$  =  0
+		- # $\vec{X}$
+		- # <u> X </u>
+-

@@ -1,0 +1,3 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- (RE_n low or RE_t/RE_c crosspoint) to DQS/DQ driven by device
+- X3-9070: 5-18ns

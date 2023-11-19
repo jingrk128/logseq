@@ -1,0 +1,3 @@
+- X3-9060 Datasheet Auto 1.0
+- P1[3:0]: Channel ODT (CH ODT) Value for VOH Calibration and For LTT Pull-up Driver Strength
+- P1[7:4]: LTT Pull-down Driver Strength(PDDS)

@@ -1,0 +1,9 @@
+- X3-9060 Datasheet Auto 1.0
+- 用於存放準備要讀取或寫入的data
+- page register = data register + cache register的總稱
+- 最接近data bus的是cache register，再來是data register
+- 每一個plane都有一個對應的page register
+- ymtc datasheet在cache program的章節裡還有兩個名詞：
+	- cache page register - 就是cache register
+	- data page register - 就是page register
+- CLE 0x80會讓把page register全清為0xff

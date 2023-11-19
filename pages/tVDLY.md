@@ -1,0 +1,4 @@
+- X3-9060 Datasheet Auto 1.0
+- Delay prior to issuing the next command after a new Volume is selected by using the Volume Select command
+- X3-9060 auto: 50ns
+	- DDR3和DDR4的每個timing mode都一樣

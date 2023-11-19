@@ -1,0 +1,6 @@
+- X3-9060 Datasheet Auto 1.0
+- P1[7:1]: Internal VREFQ Setting
+	- 可以設0x00-0x7f
+	- 假設值是X，最後後的Vrefq的電壓是`Vccq*X*0.005`
+		- 最低是Vccq的0%，最高63.5%
+		- X3-9060 Datasheet Auto 1.0打錯了，當值是1的時候，實際上是0.5%才對

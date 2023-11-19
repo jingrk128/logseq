@@ -1,0 +1,3 @@
+- YMTC有一份文件的檔名是YMTC X1-9050 Datasheet Appendix VSC rev1.0.pdf
+- 其中VSC的是Vendor Special Command的意思
+- 指的是廠商特有的command

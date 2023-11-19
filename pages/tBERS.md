@@ -1,0 +1,5 @@
+- X3-9060 Datasheet Auto 1.0
+- Block Erase Operation Time
+- X3-9060 auto:
+	- SLC: 4-10ms(10ms is timeout spec)
+	- pMLC: 5-14ms(14ms is timeout spec)

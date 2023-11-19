@@ -1,3 +1,8 @@
-- CTT (Center Tapped Termination)是一種用於高速差分信號傳輸的電路設計，它可以在芯片外部提供一個中心點接地的電阻，以將信號匹配到傳輸線的特性阻抗。
-- CTT是一種SSTL (Series-Stud Terminated Logic)的形式，它在DDR2和DDR3 SDRAM中有廣泛的應用。
-- CTT可以減少信號反射和串擾，提高信號完整性。
+- 參考資料：
+	- bing
+	- [PowerPoint Presentation (borecraft.com)](http://borecraft.com/files/ISSCC2021-30_3.pdf)
+- CTT (Center Tapped Termination)是一種信號終端方式，也稱為SSTL（Series-Stud
+  Terminated Logic）。
+	- "信號終端方式"是指在信號線的末端採用一定的電路或器件來改善信號的傳輸品質。
+- 它是指在信號線的兩端分別連接一個電阻，而這兩個電阻的中點接地，形成一個分壓電路。
+- 這樣可以減少信號的反射和串擾，提高信號的完整性和穩定性。

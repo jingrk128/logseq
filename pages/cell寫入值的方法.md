@@ -1,6 +1,6 @@
 - [NAND系列-Threshold Voltage & Vt Distribution - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/77975234)
 - https://picx.zhimg.com/70/v2-fbeb7e48acc11c200641bc78e7926527_1440w.webp
-- 上圖中，橫軸是電壓，縱軸是[[probability density function (PDF)]]
+- 上圖中，橫軸是能導通的最低電壓，縱軸是[[probability density function (PDF)]]
 - 以SLC來說，它一個cell只儲存一個bit，也只能表示兩個狀態，所以判斷值的時間也最短，只要判斷一次就行
 	- 如果電壓小於Vread就是1，反之就是0
 - MLC一個cell能儲存兩個bit，一個bit儲存lower page，另一個儲存upper page

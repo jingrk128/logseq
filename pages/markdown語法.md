@@ -1,0 +1,12 @@
+- [Markdown 常用語法整理 | 金魚腦的海馬迴 (webspace.tw)](https://sam.webspace.tw/2020/01/10/Markdown%20%E5%B8%B8%E7%94%A8%E8%AA%9E%E6%B3%95%E6%95%B4%E7%90%86/)
+	- 底線
+- [Maxkit: 如何在 Markdown 輸入數學公式及符號](https://blog.maxkit.com.tw/2020/02/markdown.html)
+	- 上標、向量、字體轉換
+		- 字體轉換方面，logseq無法用手寫體
+- [如何在 markdown 中表示矩阵？ - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/269245898)
+	- 矩陣
+- [markdown实现矩阵乘法_markdown矩阵相乘-CSDN博客](https://blog.csdn.net/leviopku/article/details/128983433)
+	- 矩陣相乘
+- [Manual for: mhchem for MathJax, mhchem for KaTeX](https://mhchem.github.io/MathJax-mhchem/)
+	- 各種數學公式
+-

@@ -1,0 +1,6 @@
+- @Bing strobe在nand flash領域是什麼意思？
+	- Strobe在NAND Flash領域是指一種用於同步讀取NAND Flash的信號，它是Data Strobe的縮寫，也就是資料脈衝信號。
+	- Strobe信號由NAND Flash驅動，用於指示主機何時可以採樣資料匯流排上的資料。
+- @Bing 那為什麼線上翻譯會翻出「頻閃」這個結果呢？
+	- strobe這個單字在一般的英文詞典中，有「頻閃燈」或「頻閃現象」的意思，所以線上翻譯可能就將它簡化成「頻閃」。
+	- 但是在NAND Flash領域，strobe是一個專有名詞，它不是指一種光源或現象，而是指一種信號。

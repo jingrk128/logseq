@@ -1,0 +1,12 @@
+- X3-9060 Datasheet Auto 1.0
+- X3-9060 auto不支援此功能
+- 用來增強program和erase的操作
+	- 所謂的增強，應該是讓操作期間的電壓可以更穩定？ #nand問題集
+- Vpp的範圍在10.8V和13.2V
+- 可以透過set feature [[Interface Configuration - 0x02]]的P1[0]開關此功能
+- Vpp、Vcc、Vccq的關係
+	- Vccq可以比Vcc早或晚上電，也可以和Vcc一起上電，等Vcc上電完成後，Vpp才可以上電
+	- 等Vpp上電完成，才可以用set feature開啟External Vpp
+	- 不使用External Vpp時，在停止對Vpp供電前，要先用set feature關閉External Vpp
+	- Vpp、Vcc、Vccq斷電流程
+		- Vpp先斷電，Vcc才可以斷電，Vccq可以比Vcc早或晚斷電，也可以和Vcc一起斷電

@@ -1,0 +1,5 @@
+- X3-9070 Package Datasheet ClientPlus Rev1.1
+- DQS setup time for data input start
+- 在write preamble([tWPRE](651a94d2-3a89-477a-a253-7f753ecc5c32))之前，DOS high的時間
+- X3-9070: 30ns
+	- DDR3和DDR4都一樣

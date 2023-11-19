@@ -1,0 +1,11 @@
+- X3-9060 Datasheet Auto 1.0
+- 將
+- 流程：CLE 0xD7->[[tWB]]
+	- 和[[Program Resume]]不同的地方是不用加column和row addr
+	- 但是這樣nand要怎麼知道對哪個lun做resume？難道是要先用[[Read Status Enhanced]]指定lun嗎？ #nand問題集
+	- X1-9050在[[tWB]]之後還有一個[[tERES]]，X2-9060、X3-9060、X3-9070則都沒有
+	  id:: 652d081e-42b0-4b94-adce-32cd79f9c42c
+- 鑽了一句話的牛角尖：
+	- The host is allowed to issue the next Erase Suspend Command if SR[6] is polled to return to 0 by issuing Read Status (70h) command.
+	- 原本以為這句話是說，如果處於erase suspend mode時，發佈0x70得到sr[6]為0時，就可以再發佈第二次erase suspend
+	- 後來仔細想想它意思應該是：erase resume後，如果再發佈erase並用0x70得到sr[6]為0的話，就可以再發佈第二次erase suspend

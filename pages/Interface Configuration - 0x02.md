@@ -1,0 +1,28 @@
+- X3-9060 Datasheet Auto 1.0
+- 所有的欄位的預設值都是0
+- X1在設定成DDR2且0xFF reset之後，設定會被重置，DDR3則會保留設定；X2和X3則是設定都會保留
+- 0xFC和0xFA reset之後則是X1 X2 X3設定都會保留
+- 修改設定後，會立即生效
+- 修改時，要避免訊號完整性的問題
+	- 若出現訊號完整性的問題，先把timing mode調成0，並調整其它欄位到適當的值，然後再把timing mode設回去
+- P1[0]: VEN - 設定VREFQ
+	- 1: 使用外部；0: 使用內部
+- P1[1]: CMPD - DQS_c的enable
+- P1[2]: CMPR - RE_c的enable
+- P1[7:4] DQ/DQS/RE_n ODT Enable
+	- 設定DQ[7:0], DQS_t, DQS_c, RE_t, and RE_c 的ODT Rtt
+		- Rtt是Resistor Termination的縮寫，也就是終端電阻
+		  id:: 6531f07b-c855-4e6c-b808-31a9c3cb44ab
+		- 如果想各別設定每個項目的Rtt，可以到ODT Configure
+			- 如果設定了ODT Configure，這個欄位的值就會被忽略
+- P2[3:0] Warmup RE_n and DQS cycles for Data Output
+- P2[7:4] Warmup DQS cycles for Data Input
+- P3[1:0] Interface Type
+	- 0: [[CTT (Center Tapped Termination)]]
+	- 1: [[LTT (Low Tapped Termination)]]
+- P3[6] VOH for LTT
+	- 0: Vccq/3
+	- 1: Vccq/2.5
+	  id:: 6531f63e-32e6-4480-a5ea-1d18724a58ac
+	- VOH是Voltage Output High的縮寫
+	- VOH for LTT指的是在LTT模式下high level的電壓值

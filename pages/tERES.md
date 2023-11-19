@@ -1,0 +1,3 @@
+- X1-9050 Package Datasheet Client rev4.0
+- Erase Resume Operation Time
+- X1-9050: 2us

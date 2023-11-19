@@ -1,8 +1,7 @@
-- LTT (Low Tapped Termination)是一種用於高速差分信號傳輸的電路設計，它可以在芯片外部提供一個低阻值的電阻，以將信號匹配到傳輸線的特性阻抗。
-- LTT是一種POD (Pseudo Open Drain)的形式，它在DDR4和3-D Flash Memory中有廣泛的應用。
-- LTT可以減少信號反射和串擾，提高信號完整性，並節約IO功耗。
-- LTT可以應用在DDR4中，因為DDR4的數據線的端接方式從CTT (Center Tapped Termination)更改為POD。這是為了提高高速下的信號完整性，並節約IO功耗。
-- LTT是OCD Topology的一種類型，但它與CTT (Center Tapped Termination)不同。
-	- CTT使用中心點接地的電阻，而LTT使用低阻值的電阻。
-	- CTT不需要校準輸出阻抗，而LTT需要。
-	- CTT和LTT都可以使用SSTL (Stub Series Terminated Logic)信號，但LTT也可以使用POD信號。
+- 參考資料：
+	- bing
+	- [PowerPoint Presentation (borecraft.com)](http://borecraft.com/files/ISSCC2021-30_3.pdf)
+	-
+- LTT (Low Tapped Termination)是一種信號終端方式，與CTT類似，但是不需要在信號線的中點接地，而是在信號線的兩端分別連接一個電阻，而這兩個電阻的中點連接到一個低電壓源，形成一個分壓電路。
+	- "信號終端方式"是指在信號線的末端採用一定的電路或器件來改善信號的傳輸品質。
+- 這樣可以減少信號的反射和串擾，提高信號的完整性和穩定性。

@@ -1,0 +1,15 @@
+- X3-9060 Datasheet Auto 1.0
+- P1[0]: Factory Setting
+	- keeps input path settings as determined by training/reset
+		- 設1時是原廠設定
+		- 設0時是tranning後的值
+- P1[1]: All LUN
+	- 如果設1再進行trainning，則tranning的值會寫入所有的lun
+		- lun的address cycle會被忽略
+- P2 [7:0] Status bits for dq [3:0] (read only)
+	- P2 [1:0]:
+		- 00: DQ0校正成功
+		- 01: DQ0校正失敗，DQ0太慢
+		- 10: DQ0校正失敗，DQ0太快
+		- 11: DQ0校正失敗，原因不明
+- P3 [7:0] Status bits for dq [7:4] (read only)

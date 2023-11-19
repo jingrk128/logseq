@@ -1,0 +1,5 @@
+- Open NAND Flash Interface Specification Revision 5.1
+- Ready-busy time during write RX training
+- NV-DDR2/NV-DDR3: 200us
+- NV-LPDDR4: 200us
+- X3-9060 auto在[[Write DQ Training (Rx Side)]]也有用到這個時間，但X3-9060 Datasheet Auto 1.0卻沒有說明這個時間的詳情，只有說max是200us

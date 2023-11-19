@@ -1,0 +1,15 @@
+- 參考資料
+	- X3-9060 Datasheet Auto 1.0
+	- X1-9050 Package Datasheet Client rev4.0
+- ### Get Feature
+- 讀取各個feature的值
+- 流程：CLE 0xEE->ALE (feature addr)->[[tWB]] [[tFEAT]] [[tRR]]->Dout P1...P4
+	- P1的P，應該是Parameter的縮寫
+- 必須把P1-P4都讀完，才能執行下一個cmd
+- 如果data interface是DDR的話，每個byte都要讀取兩次
+- 如果用read status去polling R/B pin的話，polling結束後，記得要下CLE 0x00，這樣之後才能讀到feature的值
+-
+- ### LUN Get Feature
+- 和Get Feature不同的地方是只讀取特定的LUN
+	- 一般的Get Feature如果遇到每個LUN有不同的設定值，會讀到什麼值？ #nand問題集
+- 流程：CLE 0xD4->ALE lun number->ALE feature addr->[[tWB]] [[tFEAT]] [[tRR]]->Dout P1...P4
