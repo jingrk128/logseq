@@ -13,11 +13,8 @@
 		- 它的 dimension 就等於7減掉這個矩陣的 rank 3, 也就是4, 所以C集合裡面就有$2^4$ = 16個 codewords。
 			- 什麼是rank3？
 				- ans: 學線性代數就知道
-		- 它的 dimension 就等於7減掉這個矩陣的 rank 3, 也就是4, 所以C集合裡面就有$2^4$ = 16個 codewords。
-			- 什麼是rank3？
-				- ans: 學線性代數就知道
-		- 我們從一個 codeword 除了 全部是0之外, 它的1的個數最少有幾個來考慮。 有沒有可能是1? 不可能, 因為如果有一 個 codeword 的weight 是1, 那H乘上去之 後會得到某一個 cloumn, 絕不會是0, 所以 這個codeword 就不會在 null space 裡面, 因此不可能是1。
-			- 2也是不可能的, 因為一個 weight 是2的codeword 與H相乘後, 會變 成H中兩個不同的column 相加, 但是H中 的每一個 column 都不一樣, 所以相加之後 不可能是0, 所以這樣的codeword 也不在 null space 裡面。
+		- 我們從一個 codeword 除了 全部是0之外, 它的1的個數最少有幾個來考慮。 有沒有可能是1? 不可能, 因為如果有一個 codeword 的weight 是1, 那H乘上去之 後會得到某一個 cloumn, 絕不會是0, 所以 這個codeword 就不會在 null space 裡面, 因此不可能是1。
+			- 2也是不可能的, 因為一個 weight 是2的codeword 與H相乘後, 會變 成H中兩個不同的column 相加, 但是H中 的每一個 column 都不一樣, 所以相加之後不可能是0, 所以這樣的codeword 也不在 null space 裡面。
 			- 那可不可能是3? 答案是對的
 	- 蛋蛋
 		- 什麼是線性獨立的校驗方程？
@@ -37,8 +34,3 @@
 			- ans: 有效信息指的是欲傳送的data，以(7, 4)漢明碼來說，k就是4，n是7，r是3
 		- r個校驗bit 是什麼意思？
 			- ans: 就是encode時，會加在data後面的bit數，以(7, 4)漢明碼為例，有校驗碼有3bit，所以r就是3
-		-
-		- H &<u>ｘ</u>^T$  =  0
-		- # $\vec{X}$
-		- # <u> X </u>
--

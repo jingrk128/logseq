@@ -1,0 +1,12 @@
+- Wear Leveling是磨損均衡
+- 目的是儘量讓每個block的erase次數保持一致，避免有的block頻繁erase導致提前陣亡，會使得SSD容量縮減
+- Dynamic Wear Leveling
+	- 執行寫入動作時：
+		- 冷數據寫在年老的block
+		- 熱數據寫在年輕的block
+- Static Wear Leveling
+	- SSD閒置時：
+		- 把冷數據搬到年老的block
+		- 把熱數據搬到年輕的block
+	- 也可以經由GC來順便實施Static Wear Leveling
+	- 處理冷數據時，除了只搬移有效數據，也可以考慮整個block都搬移

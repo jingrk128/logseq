@@ -237,6 +237,13 @@
 	- 第91頁
 		- RTY_DAT指令(0x9)
 			- 圖片中的rty_wp和rty_wh是什麼意思？
+	- 第94頁 - 1.3
+		- 0x04[31] 是reserved，但code裡是wr_reg_mode
+		- 0x08[27:23] 是reserved，但code裡卻是bc_grp和bc_en
+	- 第95頁 - 1.3
+		- 0x20[15:14] 這個field是2，但上面卻寫3
+		- fw上MTQ parameter有0x38、0x3c，但文件上沒有
+	-
 - hal_flash.h
 	- 第369行 spec上寫frame ptr cache長度是6bit，故CHK_FRM_PTR_MASK定義為0x1F是否錯誤，應為0x3F才正確？
 - XTE210_FIP_Specification_V1.0.pdf第15頁上方

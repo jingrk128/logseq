@@ -1,0 +1,4 @@
+- onfi 5.0 - 3.5.2. Discovery with CE_n pin reduction #nand問題集
+	- `To reset all NAND Targets in parallel, the host issues a Reset (FFh) as the first command issued to the NAND device(s).`
+	- `To reset NAND Targets sequentially, the host issues a Read Status (70h) command as the first command issued to all NAND Targets on the selected Host Target.`
+		- 意思是先執行Read Status (70h)，再執行Reset (FFh)，收到指令的nand target就會自行分批執行Reset (FFh)，而非同時執行嗎？

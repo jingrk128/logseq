@@ -13,6 +13,7 @@
 	- ### cycle lenth
 		- 從一個check node出發，經過多個cycle(但中間的node不能有重覆的)，最後再連回一開始的check node，假設如上圖中間經過了四個cycle，則cycle lenth就是4
 	- ### grith
+	  id:: 65572aef-2653-4851-9bd2-4282f11b15f7
 		- 就是整個tanner graph中最小的cycle lenth
 		- grith越大，代表這個H矩陣的糾錯能力越強
 		-

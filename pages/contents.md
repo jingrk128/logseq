@@ -6,7 +6,18 @@
 	- [[hal_flash_init()]]
 	- [[hal_flash_set_fifo_range()]]
 	- [[hal_flash_set_boot_header_format()]]
+- [[SSD]]
+	- [[2311的術語]]
+	- [[FTL]]
+	- [[P2L]]
+	- [[GC(Garbage Collection，垃圾回收)]]
+	- [[Trim]]
+	- [[Wear Leveling]]
+	- [[斷電恢復]]
+	- [[壞塊管理]]
+	- [[SLC cache]]
 - nand
+	- [[nand問題集]]
 	- [[20230915 X4-9060 new feature]]
 	- [[MRAM]]
 	- [[ONFI和JEDEC的關係]]
@@ -77,16 +88,20 @@
 			- [[tODTON/tODTOFF]]
 			- [[tCEH]]
 			- [[tVDLY]]
-		- [[LLR]]
 		- [[probability density function (PDF)]]
 		- [[BLRD/SPRD EOL/BOL]]
 		- [[NVB]]
-	- [[ECC]]
-		- [[Tanner Graph]]
-		- [[LDPC Decoding on BEC Using Message Passing Algorithm]]
-		- [[Bit Flipping Decoding Algorithm]]
+	- ECC
+		- [[(7, 4)漢明碼]]
 		- [[矩陣運算]]
+		- [[Tanner Graph]]
+		- LDPC Decoding Using Message Passing
+			- [[on BEC]]
+			- [[Bit Flipping]]
+		- [[LLR]]
+		- [[高斯分佈(常態分佈)]]
 		- [[ECC問題集]]
+		- [[ECC雜記]]
 	- YMTC
 	  collapsed:: true
 		- [[顆粒差異]]
@@ -175,6 +190,7 @@
 		- [[polling status register的順序]]
 - 2311
   collapsed:: true
+	- [[2311問題集]]
 	- [[記憶體配置]]
 		- [[代碼空間挪移_2311 DL 20211229.mp4]]
 	- [[CLI]]
@@ -225,7 +241,6 @@
 			- [[opCmd->option.childCnt]]
 			  id:: 64b4bc95-894c-4484-8bb9-f6ee67fcab6a
 		- function
-		  collapsed:: true
 			- [[Nfc_ResetFlashCmd()]]
 			- [[Nfc_ReadStatus()]]
 			- [[NfcCheckSubmitResource()]]
@@ -337,8 +352,8 @@
 		- [[2311 ROM IAR]]
 		- [[2311 ROM 跟flashdisk不一樣的地方]]
 		- [[2311 ROM 雜項]]
+-
 - SSD
-  collapsed:: true
 	- [[SSD技術連結]]
 	- [[Wear Leaving]]
 - [[document]]
@@ -351,7 +366,11 @@
 		- [[第七講]]
 		- [[第八講]]
 		- [[嵌入式系统高级C语言编程 第09講]]
+		- [[嵌入式系统高级C语言编程 第10講]]
+		- [[嵌入式系统高级C语言编程 第11講]]
+		- [[嵌入式系统高级C语言编程 第12講]]
 	- [[什麼是CBYTE]]
+	- [[邏輯右移和算術右移的差異]]
 - [[markdown語法]]
 - Tool
 	- [[IAR]]
@@ -378,6 +397,8 @@
 - [[ESP32CAM]]
 - 電腦軟硬體
 	- [[ubuntu]]
+	- [[HDD SMR CMR PMR差異]]
+	- [[好用軟體]]
 - [[靈感筆記]]
 - [[啟點文化]]
 	- [[與人連結的三個秘密]]
