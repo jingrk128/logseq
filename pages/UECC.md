@@ -1,3 +1,3 @@
 - 參考資料：[CN104464821B - 一种防止MLC Nand Flash出现UECC问题的方法 - Google Patents](https://patents.google.com/patent/CN104464821B/zh)
 - UECC的U是Unable
-- UECC的意思就是"無法實現錯誤檢查和糾正"
+- UECC的意思就是"無法實現錯誤檢查並糾正"

@@ -1,1 +1,44 @@
-- cache
+- 把nand設定成slc來當作快取使用
+- 企業級SSD追求的是可預測的性能，不希望速度忽快忽慢，所以一般不會用SLC快取機制
+- ### 強制/非強制SLC
+	- 強制SLC寫入
+		- 寫入data時，如果slc cache不足，就會立即進行GC以騰出SLC cache所需空間
+		- 防止[[數據帶壞]]，如果寫入過程中發生異常斷電，data還是能從slc cache裡面恢復
+	- 非強制slc寫入
+		- 寫入data時，如果slc cache不足，不會進行gc，而是直接寫在tlc/qlc
+		- 因為現在的nand都是one pass programming，不必擔心數據帶壞問題，所以現在大多都是非強制slc
+- ### 靜態/動態
+	- 靜態slc cache
+		- slc cache來自固定的block，這些block不會設定回tlc/qlc mode
+		- 會導致真正能儲存的容量變小，或是OP變少
+	- 動態slc cache
+		- 所有的block都有機會輪流被設定成slc cache
+		- 寫入data的量小時，會分配比較多的slc cache，提升寫入性能
+		- 寫入量多時，會調小slc cache，以保證有足夠的可用空間
+	- 混合slc cache
+		- 有固定拿來當作slc cache的block，也會隨著使用需求不同而把其它block當作slc cache使用
+- ### 讀取分辨冷熱數據的方法
+	- 1.透過LRU鏈表判斷 #ftl問題
+		- 什麼是LRU鏈表？
+	- 2.根據請求大小判斷
+		- 小請求通常是熱數據，例：log、meta
+		- 大請求通常是冷數據
+	- 如果判斷欲讀取的data是熱數據，controller會把該筆data寫入slc cache
+- ### 寫入分辨冷熱數據的方法
+	- 1.一律都先寫到slc cache，如果遇到ssd閒置或是cache不夠時，再把slc裡的冷數據搬移到tlc/qlc #ftl問題
+		- 上面"非強制slc寫入"那邊提到，當slc不足會直接把data寫在tlc/qlc，這邊卻說會從slc挑出冷數據並搬到tlc/qlc，到底哪邊是實際做法？
+		- 需要把slc的內容讀出再寫到tlc/qlc，過程耗時且會影響使用體驗，也會導致寫入放大
+		- 目前大多使用這種做法
+	- 2.先判斷data是熱 or 冷數據
+		- 若是熱數據就寫到slc cache
+		- 冷數據寫到tlc/qlc
+	- 目前controller大多不具備判斷冷/熱數據的能力
+- ### 數據遷移
+	- 當slc cache不足，需要把slc裡的data搬到tlc/qlc的動作，就叫做數據遷移
+	- 需要從slc中挑選冷數據做遷移
+	- 如果把熱數據遷移到tlc/qlc，會導致多餘的寫入放大
+		- 以寫入來說，如果有data要更新，只要在slc內完成即可；但若data已遷移出去，就會變成不但要在slc內更新，也要在tlc/qlc內更新，相對之下就多了一次寫入動作
+		- 以讀取來說，讀取時發現該筆data是熱數據，會需要再將它重新寫入slc，也多了一次寫入動作
+	- 可以透過LRU鏈表來建立一張表，記載slc cache裡每個block冷數據的數量，也可以得知熱數據的數量 #ftl問題
+		- 因為不懂LRU鏈表，所以也看不懂這裡的做法
+	-
