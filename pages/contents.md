@@ -91,6 +91,7 @@
 		- [[probability density function (PDF)]]
 		- [[BLRD/SPRD EOL/BOL]]
 		- [[NVB]]
+		- [[數據帶壞]]
 	- ECC
 		- [[(7, 4)漢明碼]]
 		- [[矩陣運算]]

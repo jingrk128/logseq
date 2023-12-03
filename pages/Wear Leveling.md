@@ -10,3 +10,9 @@
 		- 把熱數據搬到年輕的block
 	- 也可以經由GC來順便實施Static Wear Leveling
 	- 處理冷數據時，除了只搬移有效數據，也可以考慮整個block都搬移
+		- 優點是實現簡單
+			- 不用走GC流程
+			- 更新L2P表時，只要更新block的mapping就好了，不用更新page mapping
+			- 雖然會把垃圾也一起移動，但冷數據所在block本身垃圾就不多
+				- 要是垃圾多，通常這個block就會被拿去做GC了
+-
