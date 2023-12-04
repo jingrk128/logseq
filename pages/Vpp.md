@@ -1,8 +1,0 @@
-- 參考資料：X3-9070 Package Datasheet ClientPlus Rev1.1
-- Vpp是外部電源，功能為增強array操作
-	- 增強array操作什麼？ #nand問題集
-- 上電順序：先上Vcc，再上有Vpp
-- 斷電順序：先斷Vpp，再斷Vcc
-- set feature enable Vpp之前，Vpp和Vccq要先上電完成
-- set feature disable Vpp之前，Vpp必須是上電狀態
-	-

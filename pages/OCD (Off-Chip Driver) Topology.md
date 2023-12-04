@@ -1,2 +1,0 @@
-- OCD (Off-Chip Driver) Topology是一種用於NAND Flash介面的信號驅動方式，它可以提高信號的傳送速率和品質。
-- 原理是在NAND Flash晶片和控制器之間，使用一組外部的驅動器和接收器，來增強信號的驅動能力和接收靈敏度。

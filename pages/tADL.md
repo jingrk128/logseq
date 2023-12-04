@@ -1,3 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- Address cycle to data loading time
-- X3-9070: 300ns

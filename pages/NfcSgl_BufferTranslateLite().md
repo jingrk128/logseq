@@ -1,6 +1,0 @@
-- 取得sgl addr - #NfcSgl_AllocateIndex()
-- 取得sgl index - #convertAddr2Index()
-- 填入sgl資訊
-	- buf addr
-	- data size(以sector為單位、0 base)
-	- nex sgl index

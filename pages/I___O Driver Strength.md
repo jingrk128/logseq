@@ -1,9 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- 設定I/O bus上的驅動能力
-- 以YMTC為例，一般會有三種等級可以選
-	- underdrive(DDR3以上好像就不能選這個)
-	- nominal
-	- overdrive
-- 設定並非越大或越小越好
-- 需視當前的負載(像是連接了幾條CE)來進行設定
-- 當輸出的訊號最接近方波，就是最理想的設定

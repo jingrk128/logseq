@@ -1,5 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- Busy Time for Multi-Plane Program Operation
-- X3-9070
-	- dummy busy on: 0us
-	- dummy busy off: 50-100ns

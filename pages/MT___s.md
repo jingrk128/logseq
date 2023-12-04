@@ -1,4 +1,0 @@
-- [MT/s vs MHz：準確衡量記憶體速度的單位 - Kingston Technology](https://www.kingston.com/tw/blog/pc-performance/mts-vs-mhz)
-- 1MT/s = 2MHz
-- MT/s是給DDR使用的傳輸速率單位
-	- 因為DDR一個cycle可以傳輸兩筆data，是SDRAM的兩倍

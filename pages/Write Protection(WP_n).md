@@ -1,7 +1,0 @@
-- X3-9060 Datasheet Auto 1.0
-- 這是一根實體的pin
-- 作用是當設low時，會disable program和erase
-- 當有command在執行時，不應該改變這根pin的狀態
-- 在改變這根pin的狀態後，bus要先閒置[[tWW]]的時間，之後才發發佈下一個command給nand
-- 在erase/program執行途中(R/B_n=0)把WP_n設為0的話，erase/program的操作會被中斷
-	- read的操作則不會受到WP_n的影響

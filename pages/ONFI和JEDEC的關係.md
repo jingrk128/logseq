@@ -1,1 +1,0 @@
-- [痞子衡嵌入式：并行NAND互操作性标准(JESD230)-CSDN博客](https://blog.csdn.net/Henjay724/article/details/104205381)

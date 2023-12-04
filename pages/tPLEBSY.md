@@ -1,3 +1,0 @@
-- X3-9060 Datasheet Auto 1.0
-- Busy Time for Multi-Plane Erase Operation
-- X3-9060 auto: 210-500ns

@@ -1,9 +1,0 @@
-- 參考資料：
-	- bing
-	- [施密特觸發器 - 維基百科，自由的百科全書 (wikipedia.org)](https://zh.wikipedia.org/zh-tw/%E6%96%BD%E5%AF%86%E7%89%B9%E8%A7%A6%E5%8F%91%E5%99%A8)
-- 中文是史密特觸發電路
-- 滯後，也就是在input變化時，output不會立即改著改變
-	- input變大時，要超過上限閾值，output才會變high
-	- input變小時，要低於下限閾值，output才會變low
-- 優點是可以消除信號雜訊
-- CMOS可以用來實現schmitt trigger的電路

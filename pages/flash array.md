@@ -1,2 +1,0 @@
-- 指的就是nand flash內部的cell
-- 有可能cell的排列就像是陣列一樣，所以叫做flash array

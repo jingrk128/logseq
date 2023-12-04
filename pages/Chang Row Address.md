@@ -1,5 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- CLE: 0x85(和 [[Change Write Column]]一樣 )
-- 流程：前一次Din結束->CLE 0x85->column row addr->[[tCCS]]->下一次Din
-- 下一次Din就會從指定的row和column開始
-- lun和plane必須要和之前的Din一樣

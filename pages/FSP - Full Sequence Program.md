@@ -1,4 +1,0 @@
-- FSP 可以一次對一個 word line 上的多個頁面進行寫入，從而提高寫入效率。
-- FSP 需要使用兩個暫存器，一個是 data register，另一個是 cache register。
-- 在 FSP 模式下，data register 和 cache register 獨立運作，形成一個流水線（pipeline），以增加數據吞吐量。FSP 的缺點是它會降低讀取性能，因為它會將連續的邏輯頁面分配到同一個 word line 上，減少讀取並行度和數據局部性。
-- FSP 會平滑不同類型頁面（例如 SLC、MLC、TLC）的寫入延遲，但是這些頁面仍然有不同的讀取延遲。因此，在設計 nand flash 系統時，需要考慮 FSP 對讀取性能的影響，並選擇合適的數據分配策略來提高 SSD 的效能。

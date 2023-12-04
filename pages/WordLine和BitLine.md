@@ -1,7 +1,0 @@
-- 把每個[[cell]]的控制閘極串聯起來，就是一條WordLine
-- 把每個cell的D極接到相鄰cell的S極、S極接到相鄰cell的D極，就會形成一條BitLine
-	- bitline的長度 = wordline的數量+2
-		- +2是因為[SGD和SGS]((64ffd850-718c-42fd-898e-3849ff0ee1da))
-	- bitline的數量 = 一個page有幾個bit
-- 下圖中的Word就是WordLine、bit就是bitline
-- ![image.png](../assets/image_1694422879872_0.png)

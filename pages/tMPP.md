@@ -1,3 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- Write cycle time after multi-plane program confirm command
-- X3-9070: 100ns(DDR3和DDR4都一樣)

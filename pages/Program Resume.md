@@ -1,7 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- CLE: 0x17
-- 流程：CLE 0x17->column row addr->[[tWB]]
-	- 只有lun是有效的，block、plane、page、column都是don't care
-- 如果lun不是處於suspend mode就執行resume，這個指令就會被忽略
-- 執行此指令後，等到SR[6]從1變0，就代表resume成功
-- 如果先前的suspend是multi plane，執行resume時也是對所有的plane都有效

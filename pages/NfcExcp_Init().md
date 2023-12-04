@@ -1,4 +1,0 @@
-- ### 初始化read exception相關參數
-- 把gLdpcDecErrBmp清為0
-- 初始化exception相關參數 - #NfcExcpResInitRepair()
-- gRepairCnt = 0

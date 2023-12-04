@@ -1,5 +1,0 @@
-- 參考資料：bing
-- End-to-End Error Detection是一種用於檢測和修復資料傳輸過程中可能發生的錯誤的技術。它可以提高資料的完整性和可靠性，並減少資料的損失和重傳。
-- eMMC的End-to-End Error Detection是一種基於錯誤更正碼（Error Correction Code，ECC）的方法，它可以在寫入或讀出資料時檢測和修復錯誤https://research.cs.wisc.edu/multifacet/papers/dsn03_dynamic_verification.pdf。
-- ECC是一種數學算法，它可以在資料中添加一些冗餘的位元，以便在傳輸過程中發生錯誤時，能夠恢復原始的資料。
-- eMMC的ECC通常由控制器實現，並且可以根據不同的NAND閃存記憶體類型和密度來調整其強度和效率。

@@ -1,5 +1,0 @@
-- X3-9060 Datasheet Auto 1.0
-- Busy Time for Set Features and Get Features
-	- X3-9060 auto: 410-1000ns
-- Busy time for Set Features 23h (internal VREFQ training)
-	- X3-9060 auto: 1000-1500ns

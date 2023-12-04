@@ -1,5 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- RE_n (RE_t) HIGH to WE_n HIGH
-- X3-9070
-	- min 100ns
-	- max none

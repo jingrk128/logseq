@@ -1,7 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- Vcc和Vccq沒有限定順序一定要誰先誰後，也可以兩者同時上電
-- 當Vccq=0V，DQS_t/DQS、RE_t/RE_c要在low
-- 當R/B pin可用時，才算power on完成
-	- R/B pin可用有兩個條件
-		- Vcc開始爬升後過了50us
-		- Vccq到達所需電壓後過了100us，且此時R/B在high level

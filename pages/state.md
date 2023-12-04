@@ -1,2 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- 當ALE、CLE、CE_n都在low的時候，nand處於idle state

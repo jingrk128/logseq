@@ -1,7 +1,0 @@
-- X3-9060 Datasheet Auto 1.0
-- tCALR
-	- CLE and ALE setup time to RE_n or RE_t/RE_c cross-point when ODT is disabled
-	- X3-9060 auto: 15ns(每個mode都一樣)
-- tCALR2
-	- CLE and ALE setup time to RE_n or RE_t/RE_c cross-point when ODT is enabled
-	- X3-9060 auto: 25ns(每個mode都一樣)

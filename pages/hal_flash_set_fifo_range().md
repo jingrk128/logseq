@@ -1,2 +1,0 @@
-- 設定buffer的addr和len
-- addr和len讀進來後，會向左shift 9次

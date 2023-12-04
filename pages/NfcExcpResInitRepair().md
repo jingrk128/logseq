@@ -1,4 +1,0 @@
-- ### 初始化exception相關參數
-- double linked list初始化每一個gNfcRepairQA[]
-- gNfcExcpReapMgr設為null
-- gExcpResInUse設為0

@@ -1,3 +1,0 @@
-- X3-9060 Datasheet Auto 1.0
-- 在0xff、0xfc、0xfa後設定設會被保留
-- P1[1:0] CTT Pull-up/Pull-down Drive Strength

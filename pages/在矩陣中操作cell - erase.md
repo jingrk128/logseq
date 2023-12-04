@@ -1,6 +1,0 @@
-- ![image.png](../assets/image_1694427966481_0.png)
-- 因為一個block中所有cell的基板都是共用的，所以erase最小的執行單位是block
-- SGD和SGS接float電壓
-	- float電壓是不接任何東西，也就是floating的意思嗎？ #nand問題集
-- 在所有wordline施加0V
-- 在基板施加20V，即完成Block的erase

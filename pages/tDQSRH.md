@@ -1,3 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- DQS hold time after (RE_n lowor RE_t/RE_c crosspoint)
-- X3-9070: 5ns

@@ -1,4 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- CLE: 0x85(和[[Chang Row Address]]一樣)
-- 流程：前一次Din結束->CLE 0x85->column addr->[[tCCS]]->下一次Din
-- 下一次Din的column addr就會從指定的位址開始

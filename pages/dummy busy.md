@@ -1,5 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- X3-9070預設的情況在muilt plane操作，切換plane時R/B pin不會變busy(但是9070之前的型號都會)
-- X3-9070 read時切換plane完全不用等待，但program時要等待[[tPLPBSY]]
-- 可以用set feature把dummy busy打開，這樣切換plane就會變busy，這個busy就叫dummy busy
-	- feature addr為0xC6 P1[0]

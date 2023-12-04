@@ -1,7 +1,0 @@
-- ### 初始化template參數
-- 選擇所有channle -#NfcDrv_EnableCh()
-- 在template memory填寫template table - #NfcTemplate_SeqenceTemplateInit()
-- 如果有define NFC_HP_SUSPEND_RESUME
-	- 以下每個channel都做一遍
-		- 選擇channel - #NfcDrv_EnableCh()
-		- 初始化suspend/resume - #NfcTemplate_HPSuspendResumeInit()

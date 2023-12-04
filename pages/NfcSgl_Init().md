@@ -1,9 +1,0 @@
-- ### 初始化sgl的single linked list
-- 一個sgl的大小是H_SGL_T (2dw)
-- sgl記憶體的起始位址為NFC_HW_SGL_MEM_ADDR
-- 從這個位址開始，每2dw劃分出一個sgl，共劃分出2048個
-- 做single linked list
-	- 第一個sgl指向sglIndexQueue
-	- 其餘的sgl指向自己的前一個sgl
-	- sglIndexQueue指向最後一個sgl
-- nrFreeSglIndex記錄sgl的總數，也就是2048個

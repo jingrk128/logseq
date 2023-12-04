@@ -1,5 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- Change column setup time
-- X3-9070
-	- min 300ns
-	- max none

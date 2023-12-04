@@ -1,5 +1,0 @@
-- ### 打開所有clock
-- #2311 #trunk #svn25943 #DL_Flashdisk_ASIC_YMTC_X1_9050_CLIENT
-- 把0x5400C020的bit[4:0]都設1
-	- ck1_fsh0_ck_en ~ ck1_fsh3_ck_en: 分別是ch0~ch3的clock
-	- ck1_dll_ref_ck_en:  DLL reference clock

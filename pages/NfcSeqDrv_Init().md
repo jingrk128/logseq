@@ -1,4 +1,0 @@
-- ### 初始化NfcSeqDrv的資源
-- 把gSeqAider清為0
-- 把gFreeCfCnt清為0
-- 把gCurVtIndex[]都設為0xff

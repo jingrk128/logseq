@@ -1,3 +1,0 @@
-- 參考資料：bing、[TWI601155B - 記憶體的介面、控制電路單元、儲存裝置及時脈產生方法 - Google Patents](https://patents.google.com/patent/TWI601155B/zh)
-- DQSB是DQS的差動訊號
-- B是bar的縮寫

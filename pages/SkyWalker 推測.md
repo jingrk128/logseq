@@ -1,6 +1,0 @@
-- controller是透過FCTL_PIO_CMD下CLE
-- 透過FCTL_PIO_ADR下ALE
-- 透過FCTL_PIO_DAT來read/write data
-- FCTL_FTA_ROW和FCTL_FTA_COL是用來下row和column addr
-- FLH_SOFT_WP，這個WP是write protect
--

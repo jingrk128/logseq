@@ -1,5 +1,0 @@
-- 參考資料：bing
-- PIO是一種傳輸模式，簡稱為Programmed Input/Output，也就是程控輸入/輸出。在這種模式下，資料的傳輸需要經過處理器的運行，因此效能處理速度會比DMA mode慢。DMA mode是Direct Memory Access的簡稱，也就是直接記憶體存取，它可以讓特定裝置直接讀寫記憶體而不必經過處理器，從而減少處理器的負擔，提昇資料傳輸速率。
-	- [何謂DMA and PIO mode? 兩者有何不同? - 創見資訊 (transcend-info.com)](https://hk.transcend-info.com/Support/FAQ-319)
-- 在NAND flash領域中，PIO mode通常用於與主機板或其他裝置的通訊介面，例如CF卡或eMMC等。PIO mode有不同的等級，從PIO 0到PIO 6，每個等級都有不同的傳輸速率和時序要求。一般來說，PIO mode的傳輸速率比DMA mode低，但也有一些優點，例如簡單的設計和低功耗。
-	- https://media-www.micron.com/-/media/client/global/documents/products/technical-note/nand-flash/tn2919_nand_101.pdf?rev=3774f4d24cec419382e02941b460e286

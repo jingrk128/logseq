@@ -1,8 +1,0 @@
-- 參考資料：
-	- bing
-	- [互補式金屬氧化物半導體 - 維基百科，自由的百科全書 (wikipedia.org)](https://zh.wikipedia.org/zh-tw/%E4%BA%92%E8%A3%9C%E5%BC%8F%E9%87%91%E5%B1%AC%E6%B0%A7%E5%8C%96%E7%89%A9%E5%8D%8A%E5%B0%8E%E9%AB%94)
-- 全名是**C**omplementary **M**etal-**O**xide-**S**emiconductor
-- 中文是**互補式金屬氧化物半導體**
-- CMOS是一種電路設計技術，它使用互補和對稱的p型和n型MOSFET來實現邏輯功能。
-- CMOS的優點是它有高速度、低功耗、高密度、高穩定性等特性。
-- CMOS廣泛用於製造集成電路（IC）芯片，包括微處理器、微控制器、記憶體芯片等

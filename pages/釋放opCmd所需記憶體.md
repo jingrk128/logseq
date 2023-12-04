@@ -1,9 +1,0 @@
-- 如果opCmd->option.subState是SUB_STATE_NORMAL
-	- 把opCmd->option.subState設定成SUB_STATE_NONE
-- 如果gNfcOpCmdMgr.head不是指向null
-	- gNfcOpCmdMgr.tail->next指向到&opCmd->node
-	- gNfcOpCmdMgr.tail指向到&opCmd->node
-- 如果gNfcOpCmdMgr.head是指向到null
-	- gNfcOpCmdMgr.head = gNfcOpCmdMgr.tail = &opCmd->node;
-- 把gNfcOpCmdMgr.tail->next指向到null
-- gNfcOpCmdMgr.freeTagCnt++;

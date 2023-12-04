@@ -1,5 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- tCS - CE_n setup time
-	- X3-9070: 20ns(DDR3和DDR4都一樣)
-- tCH - CE_n hold time
-	- X3-9070: 5ns(DDR3和DDR4都一樣)

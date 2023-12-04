@@ -1,5 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- Ready to data output cycle (data only)
-- X3-9070
-	- min: 20ns
-	- max: none

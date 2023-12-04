@@ -1,7 +1,0 @@
-- nand的pin腳裡的DQ和DQS都有DQ，其中的DQ是什麼意思？
-- 以下是一些網路上的資料
-	- [fpga - Data Strobe in DDR memory - Electrical Engineering Stack Exchange](https://electronics.stackexchange.com/questions/408458/data-strobe-in-ddr-memory)
-		- DQ是data signal
-		- DQS是data strobe
-	- [sram - Rams and DQ lines - Electrical Engineering Stack Exchange](https://electronics.stackexchange.com/questions/281813/rams-and-dq-lines)
-		- 在D型正反器中，data in的pin腳叫"D"，data out的pin腳叫"Q"，兩個合起來就叫DQ

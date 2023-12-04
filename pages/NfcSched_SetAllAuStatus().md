@@ -1,6 +1,0 @@
-- ### 把範圍內的au都設為指定的status
-- 算出要read的data
-	- 從第幾個au開始
-	- 到第幾個au結束
-- 算出要read的data共有幾個au
-- 把每個au都設為指定的status

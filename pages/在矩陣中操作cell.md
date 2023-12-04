@@ -1,8 +1,0 @@
-- ![image.png](../assets/image_1694422879872_0.png)
-- bit = bitline，讓每個cell透過D極和S極，和相鄰的cell互相連接
-	- bitline會連接很多條wordline，一條wordline有幾個cell，就有多少條bitline
-- Word = wordline，串接每個cell的G極
-- SGD和SGS上面的元件是一般的MOSFET
-	- SGD的D極放在bitline的頭
-	- SGS的S極放在bitline的尾
-	- 依據不同的操作，會在SGD和SGS上施加不同的電壓

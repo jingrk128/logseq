@@ -1,6 +1,0 @@
-- 今天試著把NfcDirect_ReadPageData()裡的random data out(05-E0)的部份砍掉，結果2311會得不到這個cmd_q的completion
-- 把com_q header裡的type從read改成non-data，才會有completion
-	- 把00-30換成00-35，也正常
-	- 但換成00-35，再把slc換成tlc之後，又沒有completion了
-		- 必須在同一包cmd q的後面再執行85-10，才會有completion
-- program的情形就不太一樣，不用改type一樣可以正常得到completion

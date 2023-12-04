@@ -1,5 +1,0 @@
-- X3-9070 Package Datasheet ClientPlus Rev1.1
-- Access window of DQS from RE_n (RE_t/RE_c)
-- 看起來是RE rising edge/falling edge到nand把data丟到DQ之間的delay時間
-- X3-9070: 2-25ns
-	- DDR3和DDR4都一樣

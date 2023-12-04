@@ -1,2 +1,0 @@
-- YMTC是Yangtze Memory Technologies Co., Ltd.的縮寫
-- Yangtze = 長江

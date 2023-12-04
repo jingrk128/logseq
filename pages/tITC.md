@@ -1,3 +1,0 @@
-- X3-9060 Datasheet Auto 1.0
-- Interface and Timing Mode Change Time
-- X3-9060 auto: 410-1000ns

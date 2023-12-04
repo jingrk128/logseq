@@ -1,5 +1,0 @@
-- 把每個[[cell]]的控制閘極串聯起來，就是page
-- wordline
-	- 在SLC，一個wordline就是一個page
-	- 在MLC，一個wordline是兩個page
-	- TLC是三個page，QLC是四個page
