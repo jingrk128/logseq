@@ -16,6 +16,7 @@
 	- [[斷電恢復]]
 	- [[壞塊管理]]
 	- [[SLC cache]]
+	- [[read distube]]
 - nand
 	- [[nand問題集]]
 	- [[20230915 X4-9060 new feature]]
